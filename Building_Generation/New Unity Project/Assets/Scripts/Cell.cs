@@ -5,6 +5,7 @@ using UnityEngine;
 public class Cell
 {
     public List<Tile> possibleTiles;
+    public float centerHeight;
 
     // Start is called before the first frame update
     void Start()

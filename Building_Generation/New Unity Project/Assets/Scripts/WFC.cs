@@ -12,7 +12,8 @@ public class WFC : MonoBehaviour
     Cell[,] grid;
     bool genRunning;
     int delayCounter;
-
+    int initVal;
+    bool retryGen;
     List<Tile> spawnedTiles;
     // Start is called before the first frame update
     void Start()
@@ -22,7 +23,11 @@ public class WFC : MonoBehaviour
         resetGrid();
         genRunning = true;
         delayCounter = 0;
-        // Random.InitState(1);
+
+        initVal = 16;
+        Random.InitState(initVal);
+        // Random.InitState(2);
+        retryGen = false;
     }
 
     void resetGrid() {
@@ -50,12 +55,28 @@ public class WFC : MonoBehaviour
             resetGrid();
             genRunning = true;
         }
+        if (Input.GetKeyDown(KeyCode.G)){
+            iteration = 0;
+            ++initVal;
+            Debug.Log("init " + initVal);
+            Random.InitState(initVal);
+            resetGrid();
+            genRunning = true;
+        }
         if (genRunning) {
         // if (genRunning && (++delayCounter % 60 == 0)) {
             Debug.Log(iteration);
             if (!runStep()) {
-                genRunning = false;
-                Debug.Log("done");
+                if (retryGen) {
+                    // failsafe; whether impossible configurations can appear depends on input I believe. only had failures in the case I was testing due to a mistake in neighbor list, but for other tilesets may be legitimately possible I believe
+                    iteration = 0;
+                    resetGrid();
+                    retryGen = false;
+                    // genRunning = true;
+                } else {
+                    Debug.Log("done");
+                    genRunning = false;
+                }
             }
         }
     }
@@ -88,6 +109,9 @@ public class WFC : MonoBehaviour
             spawnedTiles.Add(Instantiate(chosenTile, targetPos, Quaternion.identity));
             // TODO propagate; probably helper function in this class is best way?
             propagate(targetCoords.x, targetCoords.y, true);
+            if (retryGen) {
+                return false;
+            }
             return true;
         }
         
@@ -113,6 +137,12 @@ public class WFC : MonoBehaviour
             //     return;
             }
             // foreach(Tile t in grid[x,y].possibleTiles) {
+            // if (x == 3 && y == 0) {
+            //     Debug.Log("3,0: " + grid[x,y].possibleTiles.Count);
+            //     foreach (Tile t in grid[x,y].possibleTiles) {
+            //         Debug.Log(t.ToString());
+            //     }
+            // }
             for (int i = grid[x,y].possibleTiles.Count - 1; i >= 0; --i) {
                 Tile t = grid[x,y].possibleTiles[i];
                 if (x < mapDimensions.x - 1) {
@@ -178,6 +208,11 @@ public class WFC : MonoBehaviour
                 }
             }
 
+            if (grid[x,y].possibleTiles.Count < 1) {
+                Debug.Log("Failed, no possible tiles at " + x + ", " + y);
+                retryGen = true;
+                return;
+            }
             if (possibilitiesUpdated && grid[x,y].possibleTiles.Count == 1) {
                 Tile chosenTile = grid[x,y].possibleTiles[0];
                 Vector3 targetPos = new Vector3(x,0,y);
