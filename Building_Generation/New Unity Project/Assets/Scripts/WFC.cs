@@ -28,6 +28,9 @@ public class WFC : MonoBehaviour
         Random.InitState(initVal);
         // Random.InitState(2);
         retryGen = false;
+
+        // TODO perhaps should build rotating into this so don't need to manually make tiles for the four directions? then need probably an option to mark which/if to do rotations in parameters of Tile
+        // I guess would need a pre-pass to assess all the possible connections (since don't just need to update the tile being rotated but also each of the neighbor tiles' lists of neighbor tiles)
     }
 
     void resetGrid() {
@@ -42,6 +45,32 @@ public class WFC : MonoBehaviour
                 
                 grid[x,y] = new Cell();
                 grid[x,y].possibleTiles = new List<Tile>(tileTypes);
+                
+                // TODO: how should the height be used exactly?
+                //  want to discretize some by just taking height at certain points I think. center probably, but center of sides maybe?
+                //  what then is done with? I think:
+                //   evaluate slope/gradient, possibly just looking at difference between highest and lowest side center height
+                //   if very low slope: treat as standard cell which connects like in the flat cases, possibly embedding building model slightly in the ground
+                //   slightly higher slope: deform model some to align sides with neighboring tiles
+                //      are things like towers able to be deformed this way? I guess also can make tiles contain a deformable and non-deformable part (e.g. the tower and wall part in test models)
+                //   much higher slope: only allow special tiles which programmatically set geometry? like procedurally make e.g. a stair model with right step up to match slope
+                // TODO need to figure out how to link height-setting up with terrain (to pull them from the actual mesh values)
+
+                // test placeholder for height
+                // grid[x,y].centerHeight = 0f;
+                // grid[x,y].centerHeight = (float)x * 0.05f;
+                // grid[x,y].heightXP = ((float)x + 0.5f) * 0.05f;
+                // grid[x,y].heightXN = ((float)x - 0.5f) * 0.05f;
+                // grid[x,y].heightZP = grid[x,y].centerHeight;
+                // grid[x,y].heightZN = grid[x,y].centerHeight;
+                // good to note maybe: same scale in unity and maya so for these test models the height of 0.5 for the bricks on walls which is scaled down by 1/10 in the test here it ends up being that each tile is exactly 1 brick below the next
+                //  maybe can discretize to a point like that? then easier to deal with varying the models to suit it
+                grid[x,y].centerHeight = Mathf.Sin((float)x * Mathf.PI / 7.0f);
+                grid[x,y].heightXP = Mathf.Sin(((float)x + 0.5f) * Mathf.PI / 7.0f);
+                grid[x,y].heightXN = Mathf.Sin(((float)x - 0.5f) * Mathf.PI / 7.0f);
+                grid[x,y].heightZP = grid[x,y].centerHeight;
+                grid[x,y].heightZN = grid[x,y].centerHeight;
+
             }
         }
 
@@ -105,8 +134,9 @@ public class WFC : MonoBehaviour
             int targetTileIdx = Random.Range(0,targetCell.possibleTiles.Count);
             Tile chosenTile = targetCell.possibleTiles[targetTileIdx];
             targetCell.possibleTiles = new List<Tile>{chosenTile};
-            Vector3 targetPos = new Vector3(targetCoords.x,0,targetCoords.y);
-            spawnedTiles.Add(Instantiate(chosenTile, targetPos, Quaternion.identity));
+            // Vector3 targetPos = new Vector3(targetCoords.x,targetCell.centerHeight,targetCoords.y);
+            // spawnedTiles.Add(Instantiate(chosenTile, targetPos, Quaternion.identity));
+            makeTile(chosenTile, targetCoords);
             // TODO propagate; probably helper function in this class is best way?
             propagate(targetCoords.x, targetCoords.y, true);
             if (retryGen) {
@@ -215,8 +245,11 @@ public class WFC : MonoBehaviour
             }
             if (possibilitiesUpdated && grid[x,y].possibleTiles.Count == 1) {
                 Tile chosenTile = grid[x,y].possibleTiles[0];
-                Vector3 targetPos = new Vector3(x,0,y);
-                spawnedTiles.Add(Instantiate(chosenTile, targetPos, Quaternion.identity));
+                // Vector3 targetPos = new Vector3(x,grid[x,y].centerHeight,y);
+                // Vector3 targetPos = new Vector3(x,0,y);
+                // spawnedTiles.Add(Instantiate(chosenTile, targetPos, Quaternion.identity));
+                // makeTile(chosenTile, targetPos);
+                makeTile(chosenTile, new Vector2Int(x,y));
                 
             }
         }
@@ -231,5 +264,39 @@ public class WFC : MonoBehaviour
             if (y > 0)
                 propagate(x,y-1,false);
         }
+    }
+
+    void makeTile(Tile chosenTile, Vector2Int targetCoords) {
+        
+        Vector3 targetPos = new Vector3(targetCoords.x,0,targetCoords.y);
+        Tile newTile = Instantiate(chosenTile, targetPos, Quaternion.identity);
+        // List<Mesh> meshes;
+        // foreach (Mesh m in meshes) {
+        // TODO deal with transforms
+        Cell chosenCell = grid[targetCoords.x, targetCoords.y];
+        foreach (Transform childTransform in newTile.transform) {
+            MeshFilter[] meshFilters = childTransform.GetComponentsInChildren<MeshFilter>();
+            foreach (MeshFilter mf in meshFilters) {
+                Mesh m = mf.mesh;
+                Vector3[] vertices = m.vertices;
+                // I think x goes -0.5 *cellWidth to 0.5 * cellWidth in this example
+                // want to map -0.5 * cellWidth -> heightXN
+                // 0.5 * cellWidth -> height XP;
+
+                // TODO actually I think a better way to do this once I have this set up to read from the actual terrain
+                //  For each vertex just pull the height of the terrain directly under it and offset its y by that
+                // again I think also still I want to handle steeper slopes in some other case but for shallow slopes I think shouldn't be too bad
+                for (int i = 0; i < vertices.Length; ++i) {
+                    vertices[i] = childTransform.TransformVector(vertices[i]);
+                    vertices[i].y += Mathf.Lerp(chosenCell.heightXN, chosenCell.heightXP, vertices[i].x / cellWidth + 0.5f);
+                    vertices[i] = childTransform.InverseTransformVector(vertices[i]);
+                }
+                m.vertices = vertices;
+                m.RecalculateNormals();
+                m.RecalculateBounds();
+            }
+        }
+        spawnedTiles.Add(newTile);
+        
     }
 }
