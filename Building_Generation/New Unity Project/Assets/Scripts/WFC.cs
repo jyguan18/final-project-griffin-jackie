@@ -288,7 +288,12 @@ public class WFC : MonoBehaviour
                 // again I think also still I want to handle steeper slopes in some other case but for shallow slopes I think shouldn't be too bad
                 for (int i = 0; i < vertices.Length; ++i) {
                     vertices[i] = childTransform.TransformVector(vertices[i]);
-                    vertices[i].y += Mathf.Lerp(chosenCell.heightXN, chosenCell.heightXP, vertices[i].x / cellWidth + 0.5f);
+                    // TODO setting for where base of model is?
+                    if (chosenTile.applyHeightAboveBase || vertices[i].y <= -0.5f + 0.001f) {
+                        vertices[i].y += Mathf.Lerp(chosenCell.heightXN, chosenCell.heightXP, vertices[i].x / cellWidth + 0.5f);
+                    } else {
+                        vertices[i].y += chosenCell.centerHeight;
+                    }
                     vertices[i] = childTransform.InverseTransformVector(vertices[i]);
                 }
                 m.vertices = vertices;
