@@ -6,16 +6,21 @@ public class WFC : MonoBehaviour
 {
     public Vector2Int mapDimensions;
     public float cellWidth;
+
+    public float cellBottom = -0.5f;
+    public float cellBottomEpsilon = 0.001f;
     public InfiniteTerrain terrain;
     public Tile[] tileTypes; // TODO what type? also better name
     
     int iteration;
     Cell[,] grid;
     bool genRunning;
-    int delayCounter;
+    // int delayCounter;
     int initVal;
     bool retryGen;
     List<Tile> spawnedTiles;
+
+    
 
     
 
@@ -26,7 +31,7 @@ public class WFC : MonoBehaviour
         iteration = 0;
         resetGrid();
         genRunning = true;
-        delayCounter = 0;
+        // delayCounter = 0;
 
         initVal = 16;
         Random.InitState(initVal);
@@ -74,6 +79,11 @@ public class WFC : MonoBehaviour
                 grid[x,y].heightXN = Mathf.Sin(((float)x - 0.5f) * Mathf.PI / 7.0f);
                 grid[x,y].heightZP = grid[x,y].centerHeight;
                 grid[x,y].heightZN = grid[x,y].centerHeight;
+
+                if (terrain != null) {
+                    // TODO make connection/tile rules that care about cell height
+                    grid[x,y].centerHeight = -cellBottom + terrain.GetTerrainHeight(new Vector2(0f, 0f) * cellWidth, new Vector2(x, y) * cellWidth);
+                }
 
             }
         }
@@ -272,7 +282,7 @@ public class WFC : MonoBehaviour
 
     void makeTile(Tile chosenTile, Vector2Int targetCoords) {
         
-        Vector3 targetPos = new Vector3(targetCoords.x,0,targetCoords.y);
+        Vector3 targetPos = new Vector3(targetCoords.x * cellWidth,0,targetCoords.y * cellWidth);
         Tile newTile = Instantiate(chosenTile, targetPos, Quaternion.identity);
         // List<Mesh> meshes;
         // foreach (Mesh m in meshes) {
@@ -280,7 +290,7 @@ public class WFC : MonoBehaviour
         Cell chosenCell = grid[targetCoords.x, targetCoords.y];
         float centerHeight = 0f;
         if (terrain != null) {
-            centerHeight = 0.5f + terrain.GetTerrainHeight(new Vector2(0f, 0f) * cellWidth, new Vector2(targetCoords.x, targetCoords.y) * cellWidth);
+            centerHeight = -cellBottom + terrain.GetTerrainHeight(new Vector2(0f, 0f) * cellWidth, new Vector2(targetCoords.x, targetCoords.y) * cellWidth);
         }
         foreach (Transform childTransform in newTile.transform) {
             MeshFilter[] meshFilters = childTransform.GetComponentsInChildren<MeshFilter>();
@@ -298,8 +308,8 @@ public class WFC : MonoBehaviour
                     vertices[i] = childTransform.TransformVector(vertices[i]);
                     // TODO setting for where base of model is?
                     if (terrain != null) {
-                        if (chosenTile.applyHeightAboveBase || vertices[i].y <= -0.5f + 0.001f) {
-                            vertices[i].y += 0.5f + terrain.GetTerrainHeight((new Vector2(vertices[i].x, vertices[i].z)) * cellWidth, new Vector2(targetCoords.x, targetCoords.y) * cellWidth);
+                        if (mf.tag == "Tile Apply Height Above Base" || chosenTile.applyHeightAboveBase || vertices[i].y <= cellBottom + cellBottomEpsilon) {
+                            vertices[i].y += -cellBottom + terrain.GetTerrainHeight((new Vector2(vertices[i].x, vertices[i].z)), new Vector2(targetCoords.x, targetCoords.y) * cellWidth);
                         } else {
                             vertices[i].y += centerHeight;
                         }
