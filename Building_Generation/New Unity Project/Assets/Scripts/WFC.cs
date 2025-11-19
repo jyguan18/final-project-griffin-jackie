@@ -6,6 +6,7 @@ public class WFC : MonoBehaviour
 {
     public Vector2Int mapDimensions;
     public float cellWidth;
+    public InfiniteTerrain terrain;
     public Tile[] tileTypes; // TODO what type? also better name
     
     int iteration;
@@ -15,6 +16,9 @@ public class WFC : MonoBehaviour
     int initVal;
     bool retryGen;
     List<Tile> spawnedTiles;
+
+    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -274,6 +278,10 @@ public class WFC : MonoBehaviour
         // foreach (Mesh m in meshes) {
         // TODO deal with transforms
         Cell chosenCell = grid[targetCoords.x, targetCoords.y];
+        float centerHeight = 0f;
+        if (terrain != null) {
+            centerHeight = 0.5f + terrain.GetTerrainHeight(new Vector2(0f, 0f) * cellWidth, new Vector2(targetCoords.x, targetCoords.y) * cellWidth);
+        }
         foreach (Transform childTransform in newTile.transform) {
             MeshFilter[] meshFilters = childTransform.GetComponentsInChildren<MeshFilter>();
             foreach (MeshFilter mf in meshFilters) {
@@ -289,11 +297,18 @@ public class WFC : MonoBehaviour
                 for (int i = 0; i < vertices.Length; ++i) {
                     vertices[i] = childTransform.TransformVector(vertices[i]);
                     // TODO setting for where base of model is?
-                    if (chosenTile.applyHeightAboveBase || vertices[i].y <= -0.5f + 0.001f) {
-                        vertices[i].y += Mathf.Lerp(chosenCell.heightXN, chosenCell.heightXP, vertices[i].x / cellWidth + 0.5f);
-                    } else {
-                        vertices[i].y += chosenCell.centerHeight;
+                    if (terrain != null) {
+                        if (chosenTile.applyHeightAboveBase || vertices[i].y <= -0.5f + 0.001f) {
+                            vertices[i].y += 0.5f + terrain.GetTerrainHeight((new Vector2(vertices[i].x, vertices[i].z)) * cellWidth, new Vector2(targetCoords.x, targetCoords.y) * cellWidth);
+                        } else {
+                            vertices[i].y += centerHeight;
+                        }
                     }
+                    // if (chosenTile.applyHeightAboveBase || vertices[i].y <= -0.5f + 0.001f) {
+                    //     vertices[i].y += Mathf.Lerp(chosenCell.heightXN, chosenCell.heightXP, vertices[i].x / cellWidth + 0.5f);
+                    // } else {
+                    //     vertices[i].y += chosenCell.centerHeight;
+                    // }
                     vertices[i] = childTransform.InverseTransformVector(vertices[i]);
                 }
                 m.vertices = vertices;

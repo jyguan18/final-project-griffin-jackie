@@ -96,6 +96,18 @@ public class InfiniteTerrain : MonoBehaviour
         activeChunks.Add(coord, newChunk);
     }
 
+    public float GetTerrainHeight(Vector2 coord, Vector2 cellCoord) {
+        // Vector3 worldPosition = new Vector3(cellCoord.x, 0, cellCoord.y);
+        // int xOffset = (int)cellCoord.x;
+        // int zOffset = (int)cellCoord.y;
+
+        float noiseX = (coord.x + cellCoord.x) * noiseScale;
+        float noiseZ = (coord.y + cellCoord.y) * noiseScale;
+        float yPos = Mathf.PerlinNoise(noiseX, noiseZ) * heightMultiplier;
+        return yPos;
+
+    }
+
     private void GradientToTexture()
     {
         gradientTexture = new Texture2D(1, 100);
