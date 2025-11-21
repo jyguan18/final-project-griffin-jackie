@@ -415,8 +415,8 @@ MonoBehaviour:
   neighborsZNAutoFlags:
   - Empty
   allowedHeightBounds:
-  - {x: 8, y: 100000}
-  maxHeightDifference: 8
+  - {x: 6, y: 100000}
+  maxHeightDifference: 3
   rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!4 &89438266
 Transform:
@@ -971,8 +971,8 @@ MonoBehaviour:
   neighborsZNAutoFlags:
   - House
   allowedHeightBounds:
-  - {x: 8, y: 100000}
-  maxHeightDifference: 8
+  - {x: 6, y: 100000}
+  maxHeightDifference: 3
   rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!4 &269484662
 Transform:
@@ -1816,7 +1816,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
       propertyPath: maxHeightDifference
-      value: 8
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
       propertyPath: applyHeightAboveBase
@@ -2004,7 +2004,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
       propertyPath: allowedHeightBounds.Array.data[0].x
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
       propertyPath: allowedHeightBounds.Array.data[0].y
@@ -2309,8 +2309,8 @@ MonoBehaviour:
   neighborsZNAutoFlags:
   - Empty
   allowedHeightBounds:
-  - {x: 8, y: 100000}
-  maxHeightDifference: 8
+  - {x: 6, y: 100000}
+  maxHeightDifference: 3
   rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!4 &397979163
 Transform:
@@ -3324,8 +3324,8 @@ MonoBehaviour:
   neighborsZNAutoFlags:
   - House
   allowedHeightBounds:
-  - {x: 8, y: 100000}
-  maxHeightDifference: 8
+  - {x: 6, y: 100000}
+  maxHeightDifference: 3
   rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!4 &547676544
 Transform:
@@ -4556,7 +4556,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
       propertyPath: maxHeightDifference
-      value: 8
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
       propertyPath: applyHeightAboveBase
@@ -4704,7 +4704,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
       propertyPath: allowedHeightBounds.Array.data[0].x
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
       propertyPath: allowedHeightBounds.Array.data[0].y
@@ -4820,7 +4820,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
       propertyPath: maxHeightDifference
-      value: 8
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
       propertyPath: autoFlags.Array.size
@@ -4960,7 +4960,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
       propertyPath: allowedHeightBounds.Array.data[0].x
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
       propertyPath: allowedHeightBounds.Array.data[0].y
@@ -5867,8 +5867,8 @@ MonoBehaviour:
   neighborsZNAutoFlags:
   - House
   allowedHeightBounds:
-  - {x: 8, y: 100000}
-  maxHeightDifference: 8
+  - {x: 6, y: 100000}
+  maxHeightDifference: 3
   rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!4 &1034900788
 Transform:
@@ -6298,7 +6298,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
       propertyPath: maxHeightDifference
-      value: 8
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
       propertyPath: autoFlags.Array.size
@@ -6422,7 +6422,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
       propertyPath: allowedHeightBounds.Array.data[0].x
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
       propertyPath: allowedHeightBounds.Array.data[0].y
@@ -7276,8 +7276,8 @@ MonoBehaviour:
   neighborsZNAutoFlags:
   - House
   allowedHeightBounds:
-  - {x: 8, y: 100000}
-  maxHeightDifference: 8
+  - {x: 6, y: 100000}
+  maxHeightDifference: 3
   rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!4 &1358528283
 Transform:
@@ -8040,8 +8040,8 @@ MonoBehaviour:
   neighborsZNAutoFlags:
   - House
   allowedHeightBounds:
-  - {x: 8, y: 100000}
-  maxHeightDifference: 8
+  - {x: 6, y: 100000}
+  maxHeightDifference: 3
   rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!4 &1573458719
 Transform:
@@ -8213,7 +8213,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
       propertyPath: maxHeightDifference
-      value: 8
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
       propertyPath: autoFlags.Array.size
@@ -8337,7 +8337,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
       propertyPath: allowedHeightBounds.Array.data[0].x
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
       propertyPath: allowedHeightBounds.Array.data[0].y
@@ -8453,7 +8453,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
       propertyPath: maxHeightDifference
-      value: 8
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
       propertyPath: autoFlags.Array.size
@@ -8593,7 +8593,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
       propertyPath: allowedHeightBounds.Array.data[0].x
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
       propertyPath: allowedHeightBounds.Array.data[0].y
@@ -8709,7 +8709,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
       propertyPath: maxHeightDifference
-      value: 8
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
       propertyPath: applyHeightAboveBase
@@ -8857,7 +8857,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
       propertyPath: allowedHeightBounds.Array.data[0].x
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
       propertyPath: allowedHeightBounds.Array.data[0].y
@@ -8979,8 +8979,8 @@ MonoBehaviour:
   neighborsZNAutoFlags:
   - Empty
   allowedHeightBounds:
-  - {x: 8, y: 100000}
-  maxHeightDifference: 8
+  - {x: 6, y: 100000}
+  maxHeightDifference: 3
   rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!4 &1616852891
 Transform:
@@ -9046,8 +9046,8 @@ MonoBehaviour:
   neighborsZNAutoFlags:
   - House
   allowedHeightBounds:
-  - {x: 8, y: 100000}
-  maxHeightDifference: 8
+  - {x: 6, y: 100000}
+  maxHeightDifference: 3
   rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!4 &1619728664
 Transform:
@@ -9522,7 +9522,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
       propertyPath: maxHeightDifference
-      value: 8
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
       propertyPath: autoFlags.Array.size
@@ -9646,7 +9646,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
       propertyPath: allowedHeightBounds.Array.data[0].x
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
       propertyPath: allowedHeightBounds.Array.data[0].y
@@ -9944,8 +9944,8 @@ MonoBehaviour:
   neighborsZNAutoFlags:
   - Empty
   allowedHeightBounds:
-  - {x: 8, y: 100000}
-  maxHeightDifference: 8
+  - {x: 6, y: 100000}
+  maxHeightDifference: 3
   rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!4 &1884063816
 Transform:
@@ -10636,7 +10636,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
       propertyPath: maxHeightDifference
-      value: 8
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
       propertyPath: autoFlags.Array.size
@@ -10776,7 +10776,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
       propertyPath: allowedHeightBounds.Array.data[0].x
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
       propertyPath: allowedHeightBounds.Array.data[0].y
@@ -11228,7 +11228,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
       propertyPath: maxHeightDifference
-      value: 8
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
       propertyPath: applyHeightAboveBase
@@ -11416,7 +11416,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
       propertyPath: allowedHeightBounds.Array.data[0].x
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
       propertyPath: allowedHeightBounds.Array.data[0].y
