@@ -19,6 +19,13 @@ public class Tile : MonoBehaviour
     public string[] neighborsZPAutoFlags;
     public string[] neighborsZNAutoFlags;
 
+    // public bool hasMinHeight;
+    // public float minHeight;
+    // public bool hasMaxHeight;
+    // public float maxHeight;
+    public Vector2[] allowedHeightBounds; //pairs of min and max height that can be between? doing an array so can do e.g. one that can appear bottom and top but not middle. probably not relevant for this tileset but just to keep the option open
+    public float maxHeightDifference = -1f; // negative -> disable check
+
     [HideInInspector]
     public Quaternion rotation = Quaternion.identity;
     

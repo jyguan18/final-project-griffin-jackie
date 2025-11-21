@@ -293,28 +293,88 @@ public class WFC : MonoBehaviour
             for (int x = 0; x < mapDimensions.x; ++x) {
                 
                 grid[x,y] = new Cell();
-                grid[x,y].centerHeight = 0f;
+                // grid[x,y].centerHeight = 0f;
 
-                if (edgeTileTypes.Length > 0 && (x == 0 || y == 0 || x >= mapDimensions.x - 1 || y >= mapDimensions.y - 1)) {
-                    // TODO update how that's handled to update list in initialize too
-                    grid[x,y].possibleTiles = new List<Tile>(edgeTileTypes);
+                // if (edgeTileTypes.Length > 0 && (x == 0 || y == 0 || x >= mapDimensions.x - 1 || y >= mapDimensions.y - 1)) {
+                //     // TODO update how that's handled to update list in initialize too
+                //     grid[x,y].possibleTiles = new List<Tile>(edgeTileTypes);
 
-                } else {
-                    grid[x,y].possibleTiles = new List<Tile>(initializedTileTypes);
+                // } else {
+                grid[x,y].possibleTiles = new List<Tile>(initializedTileTypes);
 
-                }
+                // }
 
                 if (terrain != null) {
                     // TODO make connection/tile rules that care about cell height
-                    grid[x,y].centerHeight = terrain.GetTerrainHeight(new Vector2(0f, 0f) * cellWidth, new Vector2(x, y) * cellWidth);
-                    if (grid[x,y].centerHeight < waterHeight) {
-                        // TODO update how that's handled
-                        grid[x,y].possibleTiles = new List<Tile>(waterTileTypes);
+                    // TODO I think not using any of the height members of cell anymore, maybe remove
+                    // grid[x,y].centerHeight = terrain.GetTerrainHeight(new Vector2(0f, 0f) * cellWidth, new Vector2(x, y) * cellWidth);
+
+                    // TODO just sample corners? IDK
+                    float minHeight = float.MaxValue;
+                    float maxHeight = float.MinValue;
+                    // List<float> sampledHeights = new List<float>();
+                    for (float dx = -0.5f; dx <= 0.5f; dx += 0.5f) {
+                        for (float dz = -0.5f; dz <= 0.5f; dz += 0.5f) {
+                            float curHeight = terrain.GetTerrainHeight(new Vector2(dx, dz) * cellWidth, new Vector2(x, y) * cellWidth);
+                            if (curHeight < minHeight) {
+                                minHeight = curHeight;
+                            }
+                            if (curHeight > maxHeight) {
+                                maxHeight = curHeight;
+                            }
+                            // sampledHeights.Add(curHeight);
+                        }
                     }
+                    float heightDifference = maxHeight - minHeight;
+                    // bool possibilitiesUpdated = false;
+                    // TODO only run propagate on parts that did update? eh might not be worth running the tracking
+                    for (int i = grid[x,y].possibleTiles.Count - 1; i >= 0; --i) {
+                        Tile curTile = grid[x,y].possibleTiles[i];
+                        
+                        if (curTile.maxHeightDifference >= 0f && heightDifference > curTile.maxHeightDifference) {
+                            // possibilitiesUpdated = true;
+                            grid[x,y].possibleTiles.RemoveAt(i);
+                        } else if (curTile.allowedHeightBounds.Length > 0) {
+                            
+                            bool validHeight = false;
+                            foreach (Vector2 heightPair in curTile.allowedHeightBounds) {
+                                float hpMin = Mathf.Min(heightPair.x, heightPair.y);
+                                float hpMax = Mathf.Max(heightPair.x, heightPair.y);
+                                // probably makes more sense to be entirely within bounds
+                                if (maxHeight <= hpMax && minHeight >= hpMin) {
+                                    validHeight = true;
+                                    break;
+                                }
+                                // foreach(float curHeight in sampledHeights) {
+                                //     if (curHeight >= hpMin && curHeight <= hpMax) {
+                                //         validHeight = true;
+                                //         break;
+                                //     }
+                                // }
+                                // if (validHeight) {
+                                //     break;
+                                // }
+                            }
+                            if (!validHeight) {
+                                // possibilitiesUpdated = true;
+                                grid[x,y].possibleTiles.RemoveAt(i);
+                            }
+                        }
+                    }
+
+                    // if (grid[x,y].centerHeight < waterHeight) {
+                        // TODO update how that's handled
+                        // grid[x,y].possibleTiles = new List<Tile>(waterTileTypes);
+                    // }
                     // minHeight = Mathf.Min(grid[x,y].centerHeight, minHeight);
                     
                 }
 
+            }
+        }
+        for (int y = 0; y < mapDimensions.y; ++y) {
+            for (int x = 0; x < mapDimensions.x; ++x) {
+                propagate(x,y,true);
             }
         }
         // Debug.Log(minHeight);

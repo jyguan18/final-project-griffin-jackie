@@ -414,6 +414,9 @@ MonoBehaviour:
   - House
   neighborsZNAutoFlags:
   - Empty
+  allowedHeightBounds:
+  - {x: 8, y: 100000}
+  maxHeightDifference: 8
   rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!4 &89438266
 Transform:
@@ -967,6 +970,9 @@ MonoBehaviour:
   - Empty
   neighborsZNAutoFlags:
   - House
+  allowedHeightBounds:
+  - {x: 8, y: 100000}
+  maxHeightDifference: 8
   rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!4 &269484662
 Transform:
@@ -1809,6 +1815,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
+      propertyPath: maxHeightDifference
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
       propertyPath: applyHeightAboveBase
       value: 1
       objectReference: {fileID: 0}
@@ -1957,6 +1967,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
+      propertyPath: allowedHeightBounds.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
       propertyPath: neighborsXNAutoFlags.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -1987,6 +2001,14 @@ PrefabInstance:
     - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
       propertyPath: neighborsZPAutoFlags.Array.data[0]
       value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
+      propertyPath: allowedHeightBounds.Array.data[0].x
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
+      propertyPath: allowedHeightBounds.Array.data[0].y
+      value: 100000
       objectReference: {fileID: 0}
     - target: {fileID: 7839890251463364778, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2286,6 +2308,9 @@ MonoBehaviour:
   - Empty
   neighborsZNAutoFlags:
   - Empty
+  allowedHeightBounds:
+  - {x: 8, y: 100000}
+  maxHeightDifference: 8
   rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!4 &397979163
 Transform:
@@ -3298,6 +3323,9 @@ MonoBehaviour:
   - House
   neighborsZNAutoFlags:
   - House
+  allowedHeightBounds:
+  - {x: 8, y: 100000}
+  maxHeightDifference: 8
   rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!4 &547676544
 Transform:
@@ -4527,6 +4555,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
+      propertyPath: maxHeightDifference
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
       propertyPath: applyHeightAboveBase
       value: 1
       objectReference: {fileID: 0}
@@ -4635,6 +4667,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1934273426}
     - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
+      propertyPath: allowedHeightBounds.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
       propertyPath: neighborsXNAutoFlags.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -4665,6 +4701,14 @@ PrefabInstance:
     - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
       propertyPath: neighborsZPAutoFlags.Array.data[0]
       value: Empty
+      objectReference: {fileID: 0}
+    - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
+      propertyPath: allowedHeightBounds.Array.data[0].x
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
+      propertyPath: allowedHeightBounds.Array.data[0].y
+      value: 100000
       objectReference: {fileID: 0}
     - target: {fileID: 7839890251463364778, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4775,6 +4819,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
+      propertyPath: maxHeightDifference
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
       propertyPath: autoFlags.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -4875,6 +4923,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1934273426}
     - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
+      propertyPath: allowedHeightBounds.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
       propertyPath: neighborsXNAutoFlags.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -4905,6 +4957,14 @@ PrefabInstance:
     - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
       propertyPath: neighborsZPAutoFlags.Array.data[0]
       value: Empty
+      objectReference: {fileID: 0}
+    - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
+      propertyPath: allowedHeightBounds.Array.data[0].x
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
+      propertyPath: allowedHeightBounds.Array.data[0].y
+      value: 100000
       objectReference: {fileID: 0}
     - target: {fileID: 7839890251463364778, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5806,6 +5866,9 @@ MonoBehaviour:
   - House
   neighborsZNAutoFlags:
   - House
+  allowedHeightBounds:
+  - {x: 8, y: 100000}
+  maxHeightDifference: 8
   rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!4 &1034900788
 Transform:
@@ -6234,6 +6297,10 @@ PrefabInstance:
       value: 0.125
       objectReference: {fileID: 0}
     - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
+      propertyPath: maxHeightDifference
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
       propertyPath: autoFlags.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -6318,6 +6385,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1934273426}
     - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
+      propertyPath: allowedHeightBounds.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
       propertyPath: neighborsXNAutoFlags.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -6348,6 +6419,14 @@ PrefabInstance:
     - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
       propertyPath: neighborsZPAutoFlags.Array.data[0]
       value: Empty
+      objectReference: {fileID: 0}
+    - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
+      propertyPath: allowedHeightBounds.Array.data[0].x
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
+      propertyPath: allowedHeightBounds.Array.data[0].y
+      value: 100000
       objectReference: {fileID: 0}
     - target: {fileID: 7839890251463364778, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7196,6 +7275,9 @@ MonoBehaviour:
   - Empty
   neighborsZNAutoFlags:
   - House
+  allowedHeightBounds:
+  - {x: 8, y: 100000}
+  maxHeightDifference: 8
   rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!4 &1358528283
 Transform:
@@ -7957,6 +8039,9 @@ MonoBehaviour:
   - House
   neighborsZNAutoFlags:
   - House
+  allowedHeightBounds:
+  - {x: 8, y: 100000}
+  maxHeightDifference: 8
   rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!4 &1573458719
 Transform:
@@ -8127,6 +8212,10 @@ PrefabInstance:
       value: 0.125
       objectReference: {fileID: 0}
     - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
+      propertyPath: maxHeightDifference
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
       propertyPath: autoFlags.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -8211,6 +8300,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1934273426}
     - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
+      propertyPath: allowedHeightBounds.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
       propertyPath: neighborsXNAutoFlags.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -8241,6 +8334,14 @@ PrefabInstance:
     - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
       propertyPath: neighborsZPAutoFlags.Array.data[0]
       value: Empty
+      objectReference: {fileID: 0}
+    - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
+      propertyPath: allowedHeightBounds.Array.data[0].x
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
+      propertyPath: allowedHeightBounds.Array.data[0].y
+      value: 100000
       objectReference: {fileID: 0}
     - target: {fileID: 7839890251463364778, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8351,6 +8452,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
+      propertyPath: maxHeightDifference
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
       propertyPath: autoFlags.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -8451,6 +8556,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1934273426}
     - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
+      propertyPath: allowedHeightBounds.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
       propertyPath: neighborsXNAutoFlags.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -8481,6 +8590,14 @@ PrefabInstance:
     - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
       propertyPath: neighborsZPAutoFlags.Array.data[0]
       value: Empty
+      objectReference: {fileID: 0}
+    - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
+      propertyPath: allowedHeightBounds.Array.data[0].x
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
+      propertyPath: allowedHeightBounds.Array.data[0].y
+      value: 100000
       objectReference: {fileID: 0}
     - target: {fileID: 7839890251463364778, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8591,6 +8708,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
+      propertyPath: maxHeightDifference
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
       propertyPath: applyHeightAboveBase
       value: 1
       objectReference: {fileID: 0}
@@ -8699,6 +8820,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1934273426}
     - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
+      propertyPath: allowedHeightBounds.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
       propertyPath: neighborsXNAutoFlags.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -8729,6 +8854,14 @@ PrefabInstance:
     - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
       propertyPath: neighborsZPAutoFlags.Array.data[0]
       value: Empty
+      objectReference: {fileID: 0}
+    - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
+      propertyPath: allowedHeightBounds.Array.data[0].x
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
+      propertyPath: allowedHeightBounds.Array.data[0].y
+      value: 100000
       objectReference: {fileID: 0}
     - target: {fileID: 7839890251463364778, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8845,6 +8978,9 @@ MonoBehaviour:
   - Empty
   neighborsZNAutoFlags:
   - Empty
+  allowedHeightBounds:
+  - {x: 8, y: 100000}
+  maxHeightDifference: 8
   rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!4 &1616852891
 Transform:
@@ -8909,6 +9045,9 @@ MonoBehaviour:
   - House
   neighborsZNAutoFlags:
   - House
+  allowedHeightBounds:
+  - {x: 8, y: 100000}
+  maxHeightDifference: 8
   rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!4 &1619728664
 Transform:
@@ -9382,6 +9521,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
+      propertyPath: maxHeightDifference
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
       propertyPath: autoFlags.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -9466,6 +9609,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1934273426}
     - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
+      propertyPath: allowedHeightBounds.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
       propertyPath: neighborsXNAutoFlags.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -9496,6 +9643,14 @@ PrefabInstance:
     - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
       propertyPath: neighborsZPAutoFlags.Array.data[0]
       value: Empty
+      objectReference: {fileID: 0}
+    - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
+      propertyPath: allowedHeightBounds.Array.data[0].x
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
+      propertyPath: allowedHeightBounds.Array.data[0].y
+      value: 100000
       objectReference: {fileID: 0}
     - target: {fileID: 7839890251463364778, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9788,6 +9943,9 @@ MonoBehaviour:
   - House
   neighborsZNAutoFlags:
   - Empty
+  allowedHeightBounds:
+  - {x: 8, y: 100000}
+  maxHeightDifference: 8
   rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!4 &1884063816
 Transform:
@@ -10477,6 +10635,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
+      propertyPath: maxHeightDifference
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
       propertyPath: autoFlags.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -10577,6 +10739,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1934273426}
     - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
+      propertyPath: allowedHeightBounds.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
       propertyPath: neighborsXNAutoFlags.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -10607,6 +10773,14 @@ PrefabInstance:
     - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
       propertyPath: neighborsZPAutoFlags.Array.data[0]
       value: Empty
+      objectReference: {fileID: 0}
+    - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
+      propertyPath: allowedHeightBounds.Array.data[0].x
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
+      propertyPath: allowedHeightBounds.Array.data[0].y
+      value: 100000
       objectReference: {fileID: 0}
     - target: {fileID: 7839890251463364778, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11053,6 +11227,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
+      propertyPath: maxHeightDifference
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
       propertyPath: applyHeightAboveBase
       value: 0
       objectReference: {fileID: 0}
@@ -11201,6 +11379,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
+      propertyPath: allowedHeightBounds.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
       propertyPath: neighborsXNAutoFlags.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -11231,6 +11413,14 @@ PrefabInstance:
     - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
       propertyPath: neighborsZPAutoFlags.Array.data[0]
       value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
+      propertyPath: allowedHeightBounds.Array.data[0].x
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6525205456340432764, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
+      propertyPath: allowedHeightBounds.Array.data[0].y
+      value: 100000
       objectReference: {fileID: 0}
     - target: {fileID: 7839890251463364778, guid: 8569dc48f73e948368c3267a19e86973, type: 3}
       propertyPath: m_LocalPosition.x
