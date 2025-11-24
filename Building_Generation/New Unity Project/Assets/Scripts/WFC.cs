@@ -638,6 +638,15 @@ public class WFC : MonoBehaviour
                 m.vertices = vertices;
                 m.RecalculateNormals();
                 m.RecalculateBounds();
+
+                //MeshCollider meshCollider = mf.gameObject.GetComponent<MeshCollider>();
+
+                //if (meshCollider != null)
+                //{
+                //    meshCollider = mf.gameObject.AddComponent<MeshCollider>();
+                //}
+
+                //meshCollider.mesh = m;
             }
         }
         spawnedTiles.Add(newTile);

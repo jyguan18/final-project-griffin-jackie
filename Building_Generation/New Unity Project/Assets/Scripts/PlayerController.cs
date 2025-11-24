@@ -1,0 +1,99 @@
+using UnityEngine;
+
+public class PlayerController : MonoBehaviour
+{
+    [Header("Movement Settings")]
+    [Tooltip("The speed at which the player moves.")]
+    public float moveSpeed = 5.0f;
+    public float jumpForce = 8.0f;
+    public float gravity = -9.81f;
+
+    [Header("Look Settings")]
+    [Tooltip("The speed/sensitivity of mouse input for rotation.")]
+    public float lookSensitivity = 20.0f;
+
+    public Transform playerCamera;
+
+    private Rigidbody rb;
+    private Vector3 movementInput;
+    private CharacterController controller;
+    private Vector3 playerVelocity;
+    private bool isGrounded;
+
+    private float xRotation = 0f;
+
+    void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+        controller = GetComponent<CharacterController>();
+
+        if (rb == null)
+        {
+            Debug.LogError("Rigidbody component not found on this GameObject. Please add one!");
+            enabled = false;
+        }
+
+        if (playerCamera == null)
+        {
+            // Tries to find the first child component that is a Camera
+            playerCamera = GetComponentInChildren<Camera>()?.transform;
+            if (playerCamera == null)
+            {
+                Debug.LogError("Player Camera Transform is not assigned. Drag your main camera object here!");
+            }
+        }
+
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+
+    void Update()
+    {
+
+        if (playerCamera != null)
+        {
+            float mouseX = Input.GetAxis("Mouse X") * lookSensitivity;
+            float mouseY = Input.GetAxis("Mouse Y") * lookSensitivity;
+
+            xRotation -= mouseY;
+            xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+
+            playerCamera.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+
+            transform.Rotate(Vector3.up * mouseX);
+        }
+
+        isGrounded = controller.isGrounded;
+
+        if (isGrounded && playerVelocity.y < 0)
+        {
+            playerVelocity.y = 0f;
+        }
+        playerVelocity.y += gravity * Time.deltaTime;
+
+        // Movement input
+        float horizontalInput = Input.GetAxis("Horizontal");
+        float verticalInput = Input.GetAxis("Vertical");
+
+        Vector3 moveDirection = transform.right * horizontalInput + transform.forward * verticalInput;
+        controller.Move(moveDirection * moveSpeed * Time.deltaTime);
+
+        // Jumping
+        if (Input.GetButtonDown("Jump") && isGrounded)
+        {
+            playerVelocity.y = jumpForce;
+        }
+
+        controller.Move(playerVelocity * Time.deltaTime);
+    }
+
+
+    void FixedUpdate()
+    {
+        if (rb != null)
+        {
+            Vector3 desiredVelocity = movementInput * moveSpeed;
+
+            rb.velocity = new Vector3(desiredVelocity.x, rb.velocity.y, desiredVelocity.z);
+        }
+    }
+}

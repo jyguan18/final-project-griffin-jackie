@@ -6,6 +6,13 @@ using UnityEngine;
 public class TerrainChunk : MonoBehaviour
 {
     private Mesh mesh;
+    private MeshCollider meshCollider;
+
+    void Awake()
+    {
+        meshCollider = GetComponent<MeshCollider>();
+    }
+
     public void GenerateTerrain(int size, int xOffset, int zOffset, float noiseScale, float heightMultiplier, Material mat)
     {
         mesh = new Mesh();
@@ -51,5 +58,11 @@ public class TerrainChunk : MonoBehaviour
         mesh.vertices = vertices;
         mesh.triangles = triangles;
         mesh.RecalculateTangents();
+
+
+        if (meshCollider != null)
+        {
+            meshCollider.sharedMesh = mesh;
+        }
     }
 }
