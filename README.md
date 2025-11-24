@@ -23,6 +23,25 @@ Implemented basic Perlin-noise based terrain generation. I followed [this tutori
 ![Untitledvideo-MadewithClipchamp8-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/30da67fa-9746-44f6-9dee-a9ce3c5dadc4)
 ![Recording2025-11-12232842-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/93e1ca3f-a6f2-4d7b-8691-ee0b569e2c1d)
 
+# Milestone 2
+
+## Combining WFC with Terrain
+
+## Water Shader
+I created a water shader, which is really just a plane to show the water. I did run into some issues with the render pipeline, and it does not show with the current post-process step.
+
+![ScreenRecording2025-11-24013328-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/1758e9e1-ad7b-4558-8abd-64c2bf0cd648)
+
+## Post-Process Shader
+For the post-process shader, I tried to mimic a watercolor, cute style. There weren't a lot of good resources to reference, but I loosely looked at [this example](https://www.bruteforcegame.com/post/watercolor-shader-devblog-13). Of course, all the work is different since this is an older blog. I basically split the post-process shadergraph into 4 subgraphs: PaperOverlay, EdgeDarkening, WaterBloom, and ColorQuantization. The goal was to bucket the colors in the scene and apply some effects to make it look more watercolory.
+
+<img width="1366" height="781" alt="image" src="https://github.com/user-attachments/assets/831bb455-ee90-43c0-81ad-3e00ab924444" />
+
+## First Person Player View
+We also added a first person player view. This allows the player to move around in the terrain and get a better look at the environment.
+
+![ScreenRecording2025-11-24173744-ezgif com-video-to-gif-converter (2)](https://github.com/user-attachments/assets/d341ab16-3485-4889-8256-95d0bb902f45)
+
 # Design Document
 
 ## Introduction
@@ -71,7 +90,7 @@ Specifically, we will:
 | |Griffin|Jackie|Deadline|
 |--|--|--|--|
 |**Milestone 1**|- Gather assets<br>- Wave Function Collapse for a flat plane|- Setup Github<br>- Gather assets<br>- Terrain Generation|Nov 12, 2025|
-|**Milestone 2**|- First-Person Camera<br>- Adapt wave function collapse to the generated terrain|- Stylization (Post-Process Effects)<br>- Water Shading|Nov 24, 2025|
+|**Milestone 2**|- First-Person Camera<br>- Adapt wave function collapse to the generated terrain|- Stylization (Post-Process Effects)<br>- Water Shading<br> - First-Person Camera|Nov 24, 2025|
 |**Final**|- Final Tweaks<br>- Tune movement + collision|- Final Tweaks<br>- Tune colors, textures, etc.|Dec 1, 2025|
 
 
