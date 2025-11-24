@@ -150,3 +150,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c9bde83f0d1b4c98ae6edb1de450c59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  neighborsXPos: []
+  neighborsXNeg: []
+  neighborsZPos: []
+  neighborsZNeg: []
+  applyHeightAboveBase: 0
+  addRot90: 0
+  addRot180: 0
+  addRot270: 0
+  autoFlags: []
+  neighborsXPAutoFlags: []
+  neighborsXNAutoFlags: []
+  neighborsZPAutoFlags: []
+  neighborsZNAutoFlags: []
+  allowedHeightBounds: []
+  maxHeightDifference: -1
+  rotation: {x: 0, y: 0, z: 0, w: 1}
