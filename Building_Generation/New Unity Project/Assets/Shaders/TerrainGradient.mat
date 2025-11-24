@@ -105,6 +105,8 @@ Material:
     - _MaxHeight: 0
     - _Metallic: 0
     - _MinHeight: 40
+    - _Noise_Range: 0.03
+    - _Noise_Scale: 6
     - _OcclusionStrength: 1
     - _Parallax: 0.005
     - _QueueControl: 0

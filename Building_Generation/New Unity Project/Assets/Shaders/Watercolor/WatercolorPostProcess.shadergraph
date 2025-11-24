@@ -209,6 +209,21 @@
 
 {
     "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
+    "m_ObjectId": "047ec2fd77b54750b1290bba7fcebc11",
+    "m_Id": 683588533,
+    "m_DisplayName": "Smoothing Intensity",
+    "m_SlotType": 0,
+    "m_Hidden": false,
+    "m_ShaderOutputName": "_Smoothing_Intensity",
+    "m_StageCapability": 3,
+    "m_Value": 0.4000000059604645,
+    "m_DefaultValue": 0.0,
+    "m_Labels": []
+}
+
+{
+    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.Vector3MaterialSlot",
     "m_ObjectId": "05b735114581431194ee32d5e037e10d",
     "m_Id": 1,
@@ -511,6 +526,9 @@
             "m_Id": "1e02da4b525345a6ad7ef4dc04f914cf"
         },
         {
+            "m_Id": "047ec2fd77b54750b1290bba7fcebc11"
+        },
+        {
             "m_Id": "8cbdeb9f009e4eda8692003b42ce8b93"
         }
     ],
@@ -526,12 +544,14 @@
     "m_PropertyGuids": [
         "bb0752a3-94df-4e04-b463-b9d60ee5a2b0",
         "a2c82680-d1d0-43e2-9cae-9c0bd9bb7bf0",
-        "8a916848-934c-45d3-b1bd-b972002eab4a"
+        "8a916848-934c-45d3-b1bd-b972002eab4a",
+        "13b4b99e-4bee-4ac6-bc2f-ed7379662102"
     ],
     "m_PropertyIds": [
         -1827127098,
         449700373,
-        -145725259
+        -145725259,
+        683588533
     ],
     "m_Dropdowns": [],
     "m_DropdownSelectedEntries": []
