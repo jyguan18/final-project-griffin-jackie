@@ -25,7 +25,19 @@ Implemented basic Perlin-noise based terrain generation. I followed [this tutori
 
 # Milestone 2
 
-## Combining WFC with Terrain
+## Updating and Combining WFC with Terrain
+
+The Wave Function Collapse-based city generation algorithm connects to the varied height of the terrain in two ways. WFC is still performed using a 2D grid of cells, but as we construct the grid we sample the height of the terrain for a grid of positions (using the X and Z coordinates of the corners, centers of each edge, and cell center) under each cell in order to get a minimum and maximum height for the terrain under that cell. Each cell then has the set of possible tiles for that cell updated based on a set of parameters configurable per each tile type: a set of allowed height bounds, where the cell must have its minimum and maximum lie within those bounds in order to use this type of tile, and a maximum height difference, where if the difference in height that occurs within that cell is greater than the maximum then that tile also cannot be used in this cell. After updating these possibilities, the changes are propagated just as when we select a cell's tile type in the main algorithm.
+
+<img width="1339" height="827" alt="Screen Shot 2025-11-24 at 11 42 01 PM" src="https://github.com/user-attachments/assets/c6352b17-eaf7-4245-bad4-8cad0feefd48" />
+
+For example, the above image shows a scene generated from a set of tiles that are split into two groups: one is the light-colored castle tiles, while the other is the dark-colored house tiles. Both tiles have their minimum height bound set so that they cannot appear below a certain value representing the water level, so that they cannot appear in any cell which has a height sample lying below the water level. The castle tiles have a slightly higher minimum than the house tiles, so the houses appear slightly more frequently in the low-lying areas as only they can appear at the lowest points above water. The house tiles however have a lower max height difference value than the castle tiles, meaning that the castle tiles can appear on steeper slopes than the house tiles, such as on the hills in the center and upper left of the above image.
+
+The other form of connection between the systems is done in the creation of the models themselves after the tile types are chosen. The vertices of the model are all transformed based on the height of the terrain directly under that particular vertex. Components of the tile objects can configured to behave in two different ways: either all of the vertices map directly with the terrain height under them, or only vertices at or below a configurable ground level use the terrain directly under them, while the rest of the vertices use a center height shared across the whole tile. This allows features like the castle walls to fit closely to the landscape using the first configuration, allowing for smooth connections between the upper walkways, while structures like the upper parts of towers don't slope and instead are simply raised evenly in order to not appear lopsided.
+
+<img width="1339" height="835" alt="Screen Shot 2025-11-24 at 11 42 58 PM" src="https://github.com/user-attachments/assets/f5c4e976-837c-4344-a64a-eb6cd198705b" />
+
+The configuration of tile types was also reworked and made simpler to modify than in the first milestone, with each tile being able to automatically generate rotated counterparts using a set of parameters controllable on the Unity side, as well as being able to use a set of flags to group together sets of tiles that are all valid neighbors in the same situations. For example, all of the castle wall tiles share the "Wall" flag, such that each wall can reference its valid neighbors for each direction it should connect to as simply being any tile which has that wall tag. This facilitates the easier creation of a larger set of tiles, such as the house tiles used in the above examples.
 
 ## Water Shader
 I created a water shader, which is really just a plane to show the water. I did run into some issues with the render pipeline, and it does not show with the current post-process step.
