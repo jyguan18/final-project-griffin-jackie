@@ -8,12 +8,16 @@ public class PlayerController : MonoBehaviour
     public float jumpForce = 8.0f;
     public float gravity = -9.81f;
 
+    [Tooltip("Grace period for jumping when not directly grounded.")]
+    public float coyoteTime = 0.3f;
+
+    [Tooltip("Value to set Y velocity to when grounded; provides smoother motion down slopes.")]
+    public float groundYVelocity = -4.5f;
+
     [Header("Look Settings")]
     [Tooltip("The speed/sensitivity of mouse input for rotation.")]
     public float lookSensitivity = 20.0f;
 
-    // Adding a grace period to when allowed to jump to feel better on bumpy terrain
-    public float coyoteTime = 0.3f;
 
     public Transform playerCamera;
 
@@ -71,7 +75,7 @@ public class PlayerController : MonoBehaviour
 
         if (isGrounded && playerVelocity.y < 0)
         {
-            playerVelocity.y = 0f;
+            playerVelocity.y = groundYVelocity;
         }
         if (isGrounded) {
             timeSinceGrounded = 0f;
