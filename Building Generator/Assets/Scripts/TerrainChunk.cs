@@ -58,6 +58,8 @@ public class TerrainChunk : MonoBehaviour
         mesh.vertices = vertices;
         mesh.triangles = triangles;
         mesh.RecalculateTangents();
+        // ASIDE: probably should make shader account for shadows, looks a bit odd rn having shadows on buildings but not landscape
+        mesh.RecalculateNormals();
 
 
         if (meshCollider != null)

@@ -97,6 +97,7 @@ public class WFC : MonoBehaviour
             
             if (tile.addRot90) {
                 Tile rotTile = Instantiate(tile);
+                rotTile.transform.parent = this.transform;
                 rotTile.rotation = Quaternion.AngleAxis(90,Vector3.up);
                 rotTile.name += " 90";
 
@@ -120,6 +121,7 @@ public class WFC : MonoBehaviour
             
             if (tile.addRot180) {
                 Tile rotTile = Instantiate(tile);
+                rotTile.transform.parent = this.transform;
                 rotTile.rotation = Quaternion.AngleAxis(180,Vector3.up);
                 rotTile.name += " 180";
 
@@ -143,6 +145,7 @@ public class WFC : MonoBehaviour
 
             if (tile.addRot270) {
                 Tile rotTile = Instantiate(tile); // TODO is instantiate fine for this?
+                rotTile.transform.parent = this.transform;
                 rotTile.rotation = Quaternion.AngleAxis(270,Vector3.up);
                 rotTile.name += " 270";
 
@@ -598,6 +601,8 @@ public class WFC : MonoBehaviour
         
         Vector3 targetPos = new Vector3(targetCoords.x * cellWidth,0,targetCoords.y * cellWidth);
         Tile newTile = Instantiate(chosenTile, targetPos, chosenTile.rotation);
+        newTile.transform.parent = this.transform;
+
         // List<Mesh> meshes;
         // foreach (Mesh m in meshes) {
         // TODO deal with transforms
