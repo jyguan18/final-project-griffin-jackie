@@ -12,6 +12,9 @@ public class PlayerController : MonoBehaviour
     [Tooltip("The speed/sensitivity of mouse input for rotation.")]
     public float lookSensitivity = 20.0f;
 
+    // Adding a grace period to when allowed to jump to feel better on bumpy terrain
+    public float coyoteTime = 0.3f;
+
     public Transform playerCamera;
 
     private Rigidbody rb;
@@ -19,6 +22,8 @@ public class PlayerController : MonoBehaviour
     private CharacterController controller;
     private Vector3 playerVelocity;
     private bool isGrounded;
+
+    private float timeSinceGrounded;
 
     private float xRotation = 0f;
 
@@ -68,19 +73,27 @@ public class PlayerController : MonoBehaviour
         {
             playerVelocity.y = 0f;
         }
+        if (isGrounded) {
+            timeSinceGrounded = 0f;
+        } else {
+            timeSinceGrounded += Time.deltaTime;
+        }
         playerVelocity.y += gravity * Time.deltaTime;
 
         // Movement input
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
 
+        // TODO should make fit to slope better if possible, a bit jumpy
         Vector3 moveDirection = transform.right * horizontalInput + transform.forward * verticalInput;
         controller.Move(moveDirection * moveSpeed * Time.deltaTime);
 
+
         // Jumping
-        if (Input.GetButtonDown("Jump") && isGrounded)
+        if (Input.GetButtonDown("Jump") && (isGrounded || timeSinceGrounded < coyoteTime))
         {
             playerVelocity.y = jumpForce;
+            timeSinceGrounded = coyoteTime;
         }
 
         controller.Move(playerVelocity * Time.deltaTime);

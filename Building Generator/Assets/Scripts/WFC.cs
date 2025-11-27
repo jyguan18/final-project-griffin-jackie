@@ -639,14 +639,14 @@ public class WFC : MonoBehaviour
                 m.RecalculateNormals();
                 m.RecalculateBounds();
 
-                //MeshCollider meshCollider = mf.gameObject.GetComponent<MeshCollider>();
+                MeshCollider meshCollider = mf.gameObject.GetComponent<MeshCollider>();
 
-                //if (meshCollider != null)
-                //{
-                //    meshCollider = mf.gameObject.AddComponent<MeshCollider>();
-                //}
+                if (meshCollider == null)
+                {
+                   meshCollider = mf.gameObject.AddComponent<MeshCollider>();
+                }
 
-                //meshCollider.mesh = m;
+                meshCollider.sharedMesh = m;
             }
         }
         spawnedTiles.Add(newTile);
