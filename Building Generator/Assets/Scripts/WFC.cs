@@ -397,7 +397,9 @@ public class WFC : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.G)){
             iteration = 0;
-            ++initVal;
+            if (!(Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))) {
+                ++initVal;
+            }
             Debug.Log("init " + initVal);
             Random.InitState(initVal);
             resetGrid();

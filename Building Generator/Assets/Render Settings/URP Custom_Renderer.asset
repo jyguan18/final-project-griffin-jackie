@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 150ed4f8be7b73a4eb9653d9a6d48d3e, type: 3}
   m_Name: WatercolorFeature
   m_EditorClassIdentifier: 
-  m_Active: 0
+  m_Active: 1
   settings:
     watercolorMaterial: {fileID: 2100000, guid: ccff81ef015ee68439039175330cdc76, type: 2}
 --- !u!114 &11400000
