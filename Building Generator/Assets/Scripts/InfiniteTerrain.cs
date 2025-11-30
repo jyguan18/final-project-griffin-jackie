@@ -12,6 +12,9 @@ public class InfiniteTerrain : MonoBehaviour
     public Material terrainMaterial;
     public Gradient terrainGradient;
 
+    [Header("Water Settings")]
+    public Transform waterPlane;
+
     [Header("Generation Stats")]
     [SerializeField] float globalMinHeight = 0f;
     [SerializeField] float globalMaxHeight = 20f;
@@ -19,7 +22,6 @@ public class InfiniteTerrain : MonoBehaviour
     [SerializeField] int viewDistance = 5;
     [SerializeField] float noiseScale = 0.03f;
     [SerializeField] float heightMultiplier = 7;
-
 
     private Dictionary<Vector2, TerrainChunk> activeChunks = new Dictionary<Vector2, TerrainChunk>();
 
@@ -78,6 +80,14 @@ public class InfiniteTerrain : MonoBehaviour
         {
             Destroy(activeChunks[coord].gameObject);
             activeChunks.Remove(coord);
+        }
+
+        if (waterPlane != null)
+        {
+            float targetX = playerChunkCoord.x * chunkSize;
+            float targetZ = playerChunkCoord.y * chunkSize;
+
+            waterPlane.position = new Vector3(targetX, waterPlane.position.y, targetZ);
         }
     }
 
