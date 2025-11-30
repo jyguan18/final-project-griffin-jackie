@@ -82,13 +82,13 @@ public class InfiniteTerrain : MonoBehaviour
             activeChunks.Remove(coord);
         }
 
-        //if (waterPlane != null)
-        //{
-        //    float targetX = playerChunkCoord.x * chunkSize;
-        //    float targetZ = playerChunkCoord.y * chunkSize;
+        if (waterPlane != null)
+        {
+            float targetX = playerChunkCoord.x * chunkSize;
+            float targetZ = playerChunkCoord.y * chunkSize;
 
-        //    waterPlane.position = new Vector3(targetX, waterPlane.position.y, targetZ);
-        //}
+            waterPlane.position = new Vector3(targetX, waterPlane.position.y, targetZ);
+        }
     }
 
     void SpawnChunk(Vector2 coord)
