@@ -1519,9 +1519,9 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 1135788457}
-  edgeTileTypes: []
-  waterTileTypes: []
-  waterHeight: 0
+  isInfinite: 0
+  player: {fileID: 0}
+  playerGenRadius: 0
 --- !u!1 &178337785 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -3957782524123411102, guid: da9a036e0d267486cb626cd5b16c1f64, type: 3}
@@ -2819,9 +2819,9 @@ MonoBehaviour:
   - {fileID: 1239365361}
   - {fileID: 1117158716}
   - {fileID: 531247691}
-  edgeTileTypes: []
-  waterTileTypes: []
-  waterHeight: 0
+  isInfinite: 0
+  player: {fileID: 0}
+  playerGenRadius: 0
 --- !u!4 &308993707
 Transform:
   m_ObjectHideFlags: 0
@@ -5609,10 +5609,9 @@ MonoBehaviour:
   - {fileID: 1644827412}
   - {fileID: 20651075}
   - {fileID: 1719157493}
-  edgeTileTypes: []
-  waterTileTypes:
-  - {fileID: 1934273426}
-  waterHeight: 6.5
+  isInfinite: 0
+  player: {fileID: 0}
+  playerGenRadius: 0
 --- !u!1001 &579310151
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6057,9 +6056,9 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  edgeTileTypes: []
-  waterTileTypes: []
-  waterHeight: 0
+  isInfinite: 0
+  player: {fileID: 0}
+  playerGenRadius: 0
 --- !u!1 &635897084 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -3957782524123411102, guid: f2c2e2e89cb7941a9b77024ef300241f, type: 3}
@@ -6619,10 +6618,9 @@ MonoBehaviour:
   - {fileID: 547676543}
   - {fileID: 1573458718}
   - {fileID: 1619728663}
-  edgeTileTypes: []
-  waterTileTypes:
-  - {fileID: 1934273426}
-  waterHeight: 6.5
+  isInfinite: 0
+  player: {fileID: 0}
+  playerGenRadius: 0
 --- !u!1 &705198788 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -344004081357383697, guid: 832e316375d94468583b2f0939ddbb4c, type: 3}
@@ -6928,10 +6926,9 @@ MonoBehaviour:
   - {fileID: 868248205}
   - {fileID: 1944872558}
   - {fileID: 1602160007}
-  edgeTileTypes: []
-  waterTileTypes:
-  - {fileID: 1934273426}
-  waterHeight: 6.5
+  isInfinite: 0
+  player: {fileID: 0}
+  playerGenRadius: 0
 --- !u!1 &716786086 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -7609145667655734672, guid: da9a036e0d267486cb626cd5b16c1f64, type: 3}
@@ -7614,9 +7611,9 @@ MonoBehaviour:
   - {fileID: 1934273426}
   - {fileID: 1934273426}
   - {fileID: 1934273426}
-  edgeTileTypes: []
-  waterTileTypes: []
-  waterHeight: 0
+  isInfinite: 0
+  player: {fileID: 0}
+  playerGenRadius: 0
 --- !u!1001 &798173802
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9114,9 +9111,9 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  edgeTileTypes: []
-  waterTileTypes: []
-  waterHeight: 0
+  isInfinite: 0
+  player: {fileID: 0}
+  playerGenRadius: 0
 --- !u!4 &965381738 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 5d157e24e03384413862a95ac73ce2a8, type: 3}
@@ -10778,9 +10775,9 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 1602160007}
   - {fileID: 0}
-  edgeTileTypes: []
-  waterTileTypes: []
-  waterHeight: 0
+  isInfinite: 0
+  player: {fileID: 0}
+  playerGenRadius: 0
 --- !u!1 &1212654637
 GameObject:
   m_ObjectHideFlags: 0
@@ -12945,15 +12942,9 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  edgeTileTypes:
-  - {fileID: 380632653}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 798173803}
-  - {fileID: 0}
-  waterTileTypes: []
-  waterHeight: 0
+  isInfinite: 0
+  player: {fileID: 0}
+  playerGenRadius: 0
 --- !u!1001 &1473757248
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13077,9 +13068,9 @@ MonoBehaviour:
   tileTypes:
   - {fileID: 7078711888761109497}
   - {fileID: 1283088545}
-  edgeTileTypes: []
-  waterTileTypes: []
-  waterHeight: 0
+  isInfinite: 0
+  player: {fileID: 0}
+  playerGenRadius: 0
 --- !u!4 &1476623669
 Transform:
   m_ObjectHideFlags: 0
@@ -15085,9 +15076,9 @@ MonoBehaviour:
   - {fileID: 1760137732}
   - {fileID: 1602160007}
   - {fileID: 0}
-  edgeTileTypes: []
-  waterTileTypes: []
-  waterHeight: 0
+  isInfinite: 0
+  player: {fileID: 0}
+  playerGenRadius: 0
 --- !u!1 &1657856389 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3779745573541866595, guid: bd48ba56c7af04a0899658c2e1b0c78d, type: 3}
@@ -15605,9 +15596,9 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  edgeTileTypes: []
-  waterTileTypes: []
-  waterHeight: 0
+  isInfinite: 0
+  player: {fileID: 0}
+  playerGenRadius: 0
 --- !u!1001 &1702489038
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16665,10 +16656,9 @@ MonoBehaviour:
   - {fileID: 331967932}
   - {fileID: 287182402}
   - {fileID: 1212654639}
-  edgeTileTypes: []
-  waterTileTypes:
-  - {fileID: 1934273426}
-  waterHeight: 6.5
+  isInfinite: 0
+  player: {fileID: 0}
+  playerGenRadius: 0
 --- !u!1 &1825366572
 GameObject:
   m_ObjectHideFlags: 0
@@ -16753,10 +16743,9 @@ MonoBehaviour:
   - {fileID: 1692754979}
   - {fileID: 1616852890}
   - {fileID: 471054681}
-  edgeTileTypes: []
-  waterTileTypes:
-  - {fileID: 1934273426}
-  waterHeight: 6.5
+  isInfinite: 0
+  player: {fileID: 0}
+  playerGenRadius: 0
 --- !u!4 &1836371802 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 5d157e24e03384413862a95ac73ce2a8, type: 3}
@@ -17239,10 +17228,9 @@ MonoBehaviour:
   - {fileID: 311197696}
   - {fileID: 20651075}
   - {fileID: 1719157493}
-  edgeTileTypes: []
-  waterTileTypes:
-  - {fileID: 1934273426}
-  waterHeight: 6.5
+  isInfinite: 1
+  player: {fileID: 2037400732}
+  playerGenRadius: 5
 --- !u!4 &1898571035 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f2c2e2e89cb7941a9b77024ef300241f, type: 3}
@@ -18474,9 +18462,9 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  edgeTileTypes: []
-  waterTileTypes: []
-  waterHeight: 0
+  isInfinite: 0
+  player: {fileID: 0}
+  playerGenRadius: 0
 --- !u!1 &1968856920 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -344004081357383697, guid: 8e4d379d1270e40e8a89a7ee33a68580, type: 3}
