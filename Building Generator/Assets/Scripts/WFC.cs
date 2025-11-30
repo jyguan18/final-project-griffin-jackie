@@ -12,13 +12,17 @@ public class WFC : MonoBehaviour
     public float cellBottomEpsilon = 0.001f;
     public InfiniteTerrain terrain;
     public Tile[] tileTypes; // TODO what type? also better name
-    public Tile[] edgeTileTypes;
-    public Tile[] waterTileTypes;
+    
+    // public Tile[] edgeTileTypes;
+//     public Tile[] waterTileTypes;
+// 
+//     public float waterHeight;
 
-    public float waterHeight;
+    public bool isInfinite;
     
     int iteration;
-    Cell[,] grid;
+    // Cell[,] grid;
+    Dictionary<(int,int), Cell> grid;
     bool genRunning;
     // int delayCounter;
     int initVal;
@@ -27,7 +31,9 @@ public class WFC : MonoBehaviour
     List<Tile> initializedTileTypes;
     List<Tile> spawnedTiles;
 
-    
+    public Transform player;
+    public int playerGenRadius;
+    private Vector2Int playerCellCoord;
 
     
 
@@ -246,7 +252,8 @@ public class WFC : MonoBehaviour
     }
 
     void resetGrid() {
-        grid = new Cell[mapDimensions.x, mapDimensions.y];
+        grid = new Dictionary<(int,int),Cell>();
+        // grid = new Cell[mapDimensions.x, mapDimensions.y];
         for (int i = spawnedTiles.Count - 1; i >= 0; --i) {
             // Tile curTile = spawnedTiles[i];
             Destroy(spawnedTiles[i].gameObject);
@@ -294,84 +301,7 @@ public class WFC : MonoBehaviour
         // float minHeight = 10000f;
         for (int y = 0; y < mapDimensions.y; ++y) {
             for (int x = 0; x < mapDimensions.x; ++x) {
-                
-                grid[x,y] = new Cell();
-                // grid[x,y].centerHeight = 0f;
-
-                // if (edgeTileTypes.Length > 0 && (x == 0 || y == 0 || x >= mapDimensions.x - 1 || y >= mapDimensions.y - 1)) {
-                //     // TODO update how that's handled to update list in initialize too
-                //     grid[x,y].possibleTiles = new List<Tile>(edgeTileTypes);
-
-                // } else {
-                grid[x,y].possibleTiles = new List<Tile>(initializedTileTypes);
-
-                // }
-
-                if (terrain != null) {
-                    // TODO make connection/tile rules that care about cell height
-                    // TODO I think not using any of the height members of cell anymore, maybe remove
-                    // grid[x,y].centerHeight = terrain.GetTerrainHeight(new Vector2(0f, 0f) * cellWidth, new Vector2(x, y) * cellWidth);
-
-                    // TODO just sample corners? IDK
-                    float minHeight = float.MaxValue;
-                    float maxHeight = float.MinValue;
-                    // List<float> sampledHeights = new List<float>();
-                    for (float dx = -0.5f; dx <= 0.5f; dx += 0.5f) {
-                        for (float dz = -0.5f; dz <= 0.5f; dz += 0.5f) {
-                            float curHeight = terrain.GetTerrainHeight(new Vector2(dx, dz) * cellWidth, new Vector2(x, y) * cellWidth);
-                            if (curHeight < minHeight) {
-                                minHeight = curHeight;
-                            }
-                            if (curHeight > maxHeight) {
-                                maxHeight = curHeight;
-                            }
-                            // sampledHeights.Add(curHeight);
-                        }
-                    }
-                    float heightDifference = maxHeight - minHeight;
-                    // bool possibilitiesUpdated = false;
-                    // TODO only run propagate on parts that did update? eh might not be worth running the tracking
-                    for (int i = grid[x,y].possibleTiles.Count - 1; i >= 0; --i) {
-                        Tile curTile = grid[x,y].possibleTiles[i];
-                        
-                        if (curTile.maxHeightDifference >= 0f && heightDifference > curTile.maxHeightDifference) {
-                            // possibilitiesUpdated = true;
-                            grid[x,y].possibleTiles.RemoveAt(i);
-                        } else if (curTile.allowedHeightBounds.Length > 0) {
-                            
-                            bool validHeight = false;
-                            foreach (Vector2 heightPair in curTile.allowedHeightBounds) {
-                                float hpMin = Mathf.Min(heightPair.x, heightPair.y);
-                                float hpMax = Mathf.Max(heightPair.x, heightPair.y);
-                                // probably makes more sense to be entirely within bounds
-                                if (maxHeight <= hpMax && minHeight >= hpMin) {
-                                    validHeight = true;
-                                    break;
-                                }
-                                // foreach(float curHeight in sampledHeights) {
-                                //     if (curHeight >= hpMin && curHeight <= hpMax) {
-                                //         validHeight = true;
-                                //         break;
-                                //     }
-                                // }
-                                // if (validHeight) {
-                                //     break;
-                                // }
-                            }
-                            if (!validHeight) {
-                                // possibilitiesUpdated = true;
-                                grid[x,y].possibleTiles.RemoveAt(i);
-                            }
-                        }
-                    }
-
-                    // if (grid[x,y].centerHeight < waterHeight) {
-                        // TODO update how that's handled
-                        // grid[x,y].possibleTiles = new List<Tile>(waterTileTypes);
-                    // }
-                    // minHeight = Mathf.Min(grid[x,y].centerHeight, minHeight);
-                    
-                }
+                addCell(x,y);
 
             }
         }
@@ -382,6 +312,59 @@ public class WFC : MonoBehaviour
         }
         // Debug.Log(minHeight);
 
+    }
+
+    void addCell(int x, int y) {
+        grid.Add((x,y), new Cell());
+
+        Cell newCell = grid[(x,y)];
+        newCell.possibleTiles = new List<Tile>(initializedTileTypes);
+
+
+        if (terrain != null) {
+            
+            float minHeight = float.MaxValue;
+            float maxHeight = float.MinValue;
+            
+            for (float dx = -0.5f; dx <= 0.5f; dx += 0.5f) {
+                for (float dz = -0.5f; dz <= 0.5f; dz += 0.5f) {
+                    float curHeight = terrain.GetTerrainHeight(new Vector2(dx, dz) * cellWidth, new Vector2(x, y) * cellWidth);
+                    if (curHeight < minHeight) {
+                        minHeight = curHeight;
+                    }
+                    if (curHeight > maxHeight) {
+                        maxHeight = curHeight;
+                    }
+                }
+            }
+            float heightDifference = maxHeight - minHeight;
+            // bool possibilitiesUpdated = false;
+            // TODO only run propagate on parts that did update? eh might not be worth running the tracking
+            for (int i = newCell.possibleTiles.Count - 1; i >= 0; --i) {
+                Tile curTile = newCell.possibleTiles[i];
+                
+                if (curTile.maxHeightDifference >= 0f && heightDifference > curTile.maxHeightDifference) {
+                    // possibilitiesUpdated = true;
+                    newCell.possibleTiles.RemoveAt(i);
+                } else if (curTile.allowedHeightBounds.Length > 0) {
+                    
+                    bool validHeight = false;
+                    foreach (Vector2 heightPair in curTile.allowedHeightBounds) {
+                        float hpMin = Mathf.Min(heightPair.x, heightPair.y);
+                        float hpMax = Mathf.Max(heightPair.x, heightPair.y);
+                        // probably makes more sense to be entirely within bounds
+                        if (maxHeight <= hpMax && minHeight >= hpMin) {
+                            validHeight = true;
+                            break;
+                        }
+                    }
+                    if (!validHeight) {
+                        // possibilitiesUpdated = true;
+                        newCell.possibleTiles.RemoveAt(i);
+                    }
+                }
+            }
+        }
     }
     
     // Update is called once per frame
@@ -404,6 +387,18 @@ public class WFC : MonoBehaviour
             Random.InitState(initVal);
             resetGrid();
             genRunning = true;
+        }
+        if (isInfinite) {
+            Vector2Int currentCellCoord = new Vector2Int(
+                Mathf.FloorToInt(player.position.x / cellWidth),
+                Mathf.FloorToInt(player.position.z / cellWidth)
+            );
+            if (currentCellCoord != playerCellCoord) {
+                playerCellCoord = currentCellCoord;
+                if (updateGridBoundary()) {
+                    genRunning = true;
+                }
+            }
         }
         if (genRunning) {
         // if (genRunning && (++delayCounter % 60 == 0)) {
@@ -441,6 +436,31 @@ public class WFC : MonoBehaviour
                 }
             }
         }
+
+    }
+
+    bool updateGridBoundary() {
+        bool anyAdded = false;
+        for (int x = -playerGenRadius; x <= playerGenRadius; ++x) {
+            for (int y = -playerGenRadius; y <= playerGenRadius; ++y) {
+                int x2 = playerCellCoord.x + x;
+                int y2 = playerCellCoord.y + y;
+                if (!grid.ContainsKey((x2,y2))) {
+                    addCell(x2,y2);
+                    propagate(x2,y2,true);
+                    anyAdded = true;
+                    // TODO can I reduce amount of propagate happening?
+                }
+            }
+        }
+
+        // TODO this functions as-is but not ideal w/ amount of restarting whole grid that happens.
+        // I think will try instead:
+        // expand a whole block at a time (e.g. 5x5)
+        // generate that whole block
+        // if generating fails, wipe just that block and retry (rather than wiping whole map)
+        // note then probably need to make whole thing happen in one frame rather than one step at a time
+        return anyAdded;
     }
 
     bool runStep() {
@@ -451,14 +471,12 @@ public class WFC : MonoBehaviour
         Vector2Int targetCoords = new Vector2Int(0,0);
         // TODO this is the super-naive version of entropy check; can improve
         // also might eventually need to add e.g. backtracking
-        for (int y = 0; y < mapDimensions.y; ++y) {
-            for (int x = 0; x < mapDimensions.x; ++x) {
-                int len = grid[x,y].possibleTiles.Count;
-                if (leastCount > len && len > 1) {
-                    leastCount = len;
-                    targetCell = grid[x,y];
-                    targetCoords = new Vector2Int(x,y);
-                }
+        foreach(KeyValuePair<(int,int), Cell> pair in grid) {
+            int len = pair.Value.possibleTiles.Count;
+            if (leastCount > len && len > 1) {
+                leastCount = len;
+                targetCell = pair.Value;
+                targetCoords = new Vector2Int(pair.Key.Item1, pair.Key.Item2);
             }
         }
         if (leastCount != int.MaxValue) {
@@ -492,7 +510,11 @@ public class WFC : MonoBehaviour
         if (start) {
             possibilitiesUpdated = true;
         } else {
-            if (grid[x,y].possibleTiles.Count <= 1) {
+            Cell curCell;
+            if (!grid.TryGetValue((x,y), out curCell)) {
+                return;
+            }
+            if (curCell.possibleTiles.Count <= 1) {
                 // TODO might need to make sure never get 0 case
                 return;
             // } else if (grid[x,y].possibleTiles.Count <= 0) {
@@ -506,78 +528,88 @@ public class WFC : MonoBehaviour
             //         Debug.Log(t.ToString());
             //     }
             // }
-            for (int i = grid[x,y].possibleTiles.Count - 1; i >= 0; --i) {
-                Tile t = grid[x,y].possibleTiles[i];
-                if (x < mapDimensions.x - 1) {
-                    bool validNeighbor = false;
-                    // if the x+1,y cell is able to contain a tile that is a potential neighbor to this tile, it's fine
-                    foreach(Tile n in t.neighborsXPos) {
-                        // TODO I don't recall if contains works the way I want for how objects work in Unity/C#, will need to test
-                        if (grid[x+1,y].possibleTiles.Contains(n)) {
-                            validNeighbor = true;
-                            break;
+            for (int i = curCell.possibleTiles.Count - 1; i >= 0; --i) {
+                Tile t = curCell.possibleTiles[i];
+                {
+                    Cell neighborCell;
+                    if (grid.TryGetValue((x+1,y), out neighborCell)) {
+                        bool validNeighbor = false;
+                        // if the x+1,y cell is able to contain a tile that is a potential neighbor to this tile, it's fine
+                        foreach(Tile n in t.neighborsXPos) {
+                            // TODO I don't recall if contains works the way I want for how objects work in Unity/C#, will need to test
+                            if (neighborCell.possibleTiles.Contains(n)) {
+                                validNeighbor = true;
+                                break;
+                            }
+                        }
+                        if (!validNeighbor) {
+                            curCell.possibleTiles.RemoveAt(i);
+                            possibilitiesUpdated = true;
+                            continue;
                         }
                     }
-                    if (!validNeighbor) {
-                        grid[x,y].possibleTiles.RemoveAt(i);
-                        possibilitiesUpdated = true;
-                        continue;
+
+                }
+                {
+                    Cell neighborCell;
+                    if (grid.TryGetValue((x-1,y), out neighborCell)) {
+                        bool validNeighbor = false;
+                        foreach(Tile n in t.neighborsXNeg) {
+                            if (neighborCell.possibleTiles.Contains(n)) {
+                                validNeighbor = true;
+                                break;
+                            }
+                        }
+                        if (!validNeighbor) {
+                            curCell.possibleTiles.RemoveAt(i);
+                            possibilitiesUpdated = true;
+                            continue;
+                        }
                     }
                 }
-
-                if (x > 0) {
-                    bool validNeighbor = false;
-                    foreach(Tile n in t.neighborsXNeg) {
-                        if (grid[x-1,y].possibleTiles.Contains(n)) {
-                            validNeighbor = true;
-                            break;
+                {
+                    Cell neighborCell;
+                    if (grid.TryGetValue((x,y+1), out neighborCell)) {
+                        bool validNeighbor = false;
+                        foreach(Tile n in t.neighborsZPos) {
+                            if (neighborCell.possibleTiles.Contains(n)) {
+                                validNeighbor = true;
+                                break;
+                            }
                         }
-                    }
-                    if (!validNeighbor) {
-                        grid[x,y].possibleTiles.RemoveAt(i);
-                        possibilitiesUpdated = true;
-                        continue;
+                        if (!validNeighbor) {
+                            curCell.possibleTiles.RemoveAt(i);
+                            possibilitiesUpdated = true;
+                            continue;
+                        }
                     }
                 }
-
-                if (y < mapDimensions.y - 1) {
-                    bool validNeighbor = false;
-                    foreach(Tile n in t.neighborsZPos) {
-                        if (grid[x,y+1].possibleTiles.Contains(n)) {
-                            validNeighbor = true;
-                            break;
+                {
+                    Cell neighborCell;
+                    if (grid.TryGetValue((x,y-1), out neighborCell)) {
+                        bool validNeighbor = false;
+                        foreach(Tile n in t.neighborsZNeg) {
+                            if (neighborCell.possibleTiles.Contains(n)) {
+                                validNeighbor = true;
+                                break;
+                            }
                         }
-                    }
-                    if (!validNeighbor) {
-                        grid[x,y].possibleTiles.RemoveAt(i);
-                        possibilitiesUpdated = true;
-                        continue;
-                    }
-                }
-
-                if (y > 0) {
-                    bool validNeighbor = false;
-                    foreach(Tile n in t.neighborsZNeg) {
-                        if (grid[x,y-1].possibleTiles.Contains(n)) {
-                            validNeighbor = true;
-                            break;
+                        if (!validNeighbor) {
+                            curCell.possibleTiles.RemoveAt(i);
+                            possibilitiesUpdated = true;
+                            continue;
                         }
-                    }
-                    if (!validNeighbor) {
-                        grid[x,y].possibleTiles.RemoveAt(i);
-                        possibilitiesUpdated = true;
-                        continue;
                     }
                 }
             }
 
-            if (grid[x,y].possibleTiles.Count < 1) {
+            if (curCell.possibleTiles.Count < 1) {
                 Debug.Log("Failed, no possible tiles at " + x + ", " + y);
                 retryGen = true;
                 return;
             }
-            if (possibilitiesUpdated && grid[x,y].possibleTiles.Count == 1) {
-                Tile chosenTile = grid[x,y].possibleTiles[0];
+            if (possibilitiesUpdated && curCell.possibleTiles.Count == 1) {
+                Tile chosenTile = curCell.possibleTiles[0];
                 // Vector3 targetPos = new Vector3(x,grid[x,y].centerHeight,y);
                 // Vector3 targetPos = new Vector3(x,0,y);
                 // spawnedTiles.Add(Instantiate(chosenTile, targetPos, Quaternion.identity));
@@ -588,13 +620,13 @@ public class WFC : MonoBehaviour
         }
         
         if (possibilitiesUpdated) {
-            if (x < mapDimensions.x - 1)
+            // if (x < mapDimensions.x - 1)
                 propagate(x+1,y,false);
-            if (x > 0)
+            // if (x > 0)
                 propagate(x-1,y,false);
-            if (y < mapDimensions.y - 1)
+            // if (y < mapDimensions.y - 1)
                 propagate(x,y+1,false);
-            if (y > 0)
+            // if (y > 0)
                 propagate(x,y-1,false);
         }
     }
@@ -608,7 +640,7 @@ public class WFC : MonoBehaviour
         // List<Mesh> meshes;
         // foreach (Mesh m in meshes) {
         // TODO deal with transforms
-        Cell chosenCell = grid[targetCoords.x, targetCoords.y];
+        Cell chosenCell = grid[(targetCoords.x, targetCoords.y)];
         float centerHeight = 0f;
         if (terrain != null) {
             centerHeight = -cellBottom + terrain.GetTerrainHeight(new Vector2(0f, 0f) * cellWidth, new Vector2(targetCoords.x, targetCoords.y) * cellWidth);
