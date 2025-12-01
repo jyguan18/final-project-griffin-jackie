@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.49641287, b: 0.5748173, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -260,7 +260,7 @@ GameObject:
   - component: {fileID: 20651074}
   - component: {fileID: 20651075}
   m_Layer: 0
-  m_Name: Eaved Tower Through
+  m_Name: ' Eaved Tower Through'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2852,7 +2852,7 @@ GameObject:
   - component: {fileID: 309682052}
   - component: {fileID: 309682053}
   m_Layer: 0
-  m_Name: Eaved Tower Back Front Wall
+  m_Name: ' Eaved Tower Back Front Wall'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2919,7 +2919,7 @@ GameObject:
   - component: {fileID: 311197695}
   - component: {fileID: 311197696}
   m_Layer: 0
-  m_Name: Eaved Tower Back Right Wall
+  m_Name: ' Eaved Tower Back Right Wall'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5184,7 +5184,7 @@ GameObject:
   - component: {fileID: 544418506}
   - component: {fileID: 544418507}
   m_Layer: 0
-  m_Name: Eaved Tower Back
+  m_Name: ' Eaved Tower Back'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11784,7 +11784,7 @@ GameObject:
   - component: {fileID: 1336883772}
   - component: {fileID: 1336883773}
   m_Layer: 0
-  m_Name: Eaved Tower Solo
+  m_Name: ' Eaved Tower Solo'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13328,7 +13328,7 @@ GameObject:
   - component: {fileID: 1527078304}
   - component: {fileID: 1527078305}
   m_Layer: 0
-  m_Name: Eaved Tower Back Left Wall
+  m_Name: ' Eaved Tower Back Left Wall'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13418,9 +13418,9 @@ MonoBehaviour:
   terrainMaterial: {fileID: 2100000, guid: 35dc5e97a43cbf64f8ca579dbb01c80e, type: 2}
   terrainGradient:
     serializedVersion: 2
-    key0: {r: 0, g: 0.21631074, b: 1, a: 1}
-    key1: {r: 0, g: 0.26415092, b: 0.047707338, a: 1}
-    key2: {r: 0, g: 0.4433962, b: 0.0738994, a: 0}
+    key0: {r: 0.28218818, g: 0.38817573, b: 0.7735849, a: 1}
+    key1: {r: 0.1287528, g: 0.26415092, b: 0.15300322, a: 1}
+    key2: {r: 0.22030374, g: 0.4433962, b: 0.25781485, a: 0}
     key3: {r: 1, g: 1, b: 1, a: 0}
     key4: {r: 0, g: 0, b: 0, a: 0}
     key5: {r: 0, g: 0, b: 0, a: 0}
@@ -14954,7 +14954,7 @@ GameObject:
   - component: {fileID: 1644827411}
   - component: {fileID: 1644827412}
   m_Layer: 0
-  m_Name: Eaved Tower Solo Front Wall
+  m_Name: ' Eaved Tower Solo Front Wall'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15934,7 +15934,7 @@ GameObject:
   - component: {fileID: 1719157492}
   - component: {fileID: 1719157493}
   m_Layer: 0
-  m_Name: Eaved Tower Through Left Wall
+  m_Name: ' Eaved Tower Through Left Wall'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17189,7 +17189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 169a995978e92410d835cf28a3d6c4d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mapDimensions: {x: 0, y: 0}
+  mapDimensions: {x: 40, y: 40}
   cellWidth: 5
   cellBottom: -2.5
   cellBottomEpsilon: 0.001
@@ -17261,8 +17261,8 @@ MonoBehaviour:
   - {fileID: 1719157493}
   isInfinite: 1
   player: {fileID: 2037400732}
-  playerGenRadius: 2
-  blockGenRadius: 10
+  playerGenRadius: 5
+  blockGenRadius: 0
   maxBlockTries: 20
 --- !u!4 &1898571035 stripped
 Transform:
