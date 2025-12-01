@@ -40,6 +40,7 @@ public class WFC : MonoBehaviour
 
     public int maxBlockTries = 20;
 
+    public float waterHeight = 8f;
     bool resetPlayerCoords;
 
     
@@ -850,8 +851,11 @@ public class WFC : MonoBehaviour
                     vertices[i] = childTransform.TransformVector(vertices[i]);
                     // TODO setting for where base of model is?
                     if (terrain != null) {
-                        if (mf.tag == "Tile Apply Height Above Base" || chosenTile.applyHeightAboveBase || vertices[i].y <= cellBottom + cellBottomEpsilon) {
+                        if (chosenTile.placeAtWaterHeight) {
+                            vertices[i].y += -cellBottom + waterHeight;
+                        } else if (mf.tag == "Tile Apply Height Above Base" || chosenTile.applyHeightAboveBase || vertices[i].y <= cellBottom + cellBottomEpsilon) {
                             vertices[i].y += -cellBottom + terrain.GetTerrainHeight((new Vector2(vertices[i].x, vertices[i].z)), new Vector2(targetCoords.x, targetCoords.y) * cellWidth);
+
                         } else {
                             vertices[i].y += centerHeight;
                         }

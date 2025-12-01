@@ -26,6 +26,8 @@ public class Tile : MonoBehaviour
     public Vector2[] allowedHeightBounds; //pairs of min and max height that can be between? doing an array so can do e.g. one that can appear bottom and top but not middle. probably not relevant for this tileset but just to keep the option open
     public float maxHeightDifference = -1f; // negative -> disable check
 
+    public bool placeAtWaterHeight;
+
     [HideInInspector]
     public Quaternion rotation = Quaternion.identity;
     
