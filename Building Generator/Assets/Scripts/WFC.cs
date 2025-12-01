@@ -23,6 +23,7 @@ public class WFC : MonoBehaviour
     int iteration;
     // Cell[,] grid;
     Dictionary<(int,int), Cell> grid;
+    Dictionary<(int,int), bool> addedBlockCoords;
     bool genRunning;
     // int delayCounter;
     int initVal;
@@ -34,7 +35,17 @@ public class WFC : MonoBehaviour
     public Transform player;
     public int playerGenRadius;
     private Vector2Int playerCellCoord;
+    
+    public int blockGenRadius;
 
+    public int maxBlockTries = 20;
+
+    bool resetPlayerCoords;
+
+    
+
+// int madeTiles = 0;
+// int cellsAdded = 0;
     
 
     // Start is called before the first frame update
@@ -51,7 +62,7 @@ public class WFC : MonoBehaviour
         // Random.InitState(initVal);
         // Random.InitState(2);
         retryGen = false;
-
+        resetPlayerCoords = true;
         // TODO perhaps should build rotating into this so don't need to manually make tiles for the four directions? then need probably an option to mark which/if to do rotations in parameters of Tile
         // I guess would need a pre-pass to assess all the possible connections (since don't just need to update the tile being rotated but also each of the neighbor tiles' lists of neighbor tiles)
     }
@@ -252,7 +263,9 @@ public class WFC : MonoBehaviour
     }
 
     void resetGrid() {
+        resetPlayerCoords = true;
         grid = new Dictionary<(int,int),Cell>();
+        addedBlockCoords = new Dictionary<(int, int), bool>();
         // grid = new Cell[mapDimensions.x, mapDimensions.y];
         for (int i = spawnedTiles.Count - 1; i >= 0; --i) {
             // Tile curTile = spawnedTiles[i];
@@ -298,6 +311,10 @@ public class WFC : MonoBehaviour
         //     }
         // }
 
+        if (isInfinite && blockGenRadius > 0) {
+            Debug.Log("Infinite mode with blocks on: skipping initial grid");
+            return;
+        }
         // float minHeight = 10000f;
         for (int y = 0; y < mapDimensions.y; ++y) {
             for (int x = 0; x < mapDimensions.x; ++x) {
@@ -305,17 +322,20 @@ public class WFC : MonoBehaviour
 
             }
         }
+        // Debug.Log(grid.Count);
         for (int y = 0; y < mapDimensions.y; ++y) {
             for (int x = 0; x < mapDimensions.x; ++x) {
                 propagate(x,y,true);
             }
         }
+        // Debug.Log(grid.Count);
         // Debug.Log(minHeight);
 
     }
 
-    void addCell(int x, int y) {
+    bool addCell(int x, int y) {
         grid.Add((x,y), new Cell());
+        
 
         Cell newCell = grid[(x,y)];
         newCell.possibleTiles = new List<Tile>(initializedTileTypes);
@@ -365,6 +385,15 @@ public class WFC : MonoBehaviour
                 }
             }
         }
+        if (newCell.possibleTiles.Count == 1) {
+            Tile chosenTile = newCell.possibleTiles[0];
+            makeTile(chosenTile, new Vector2Int(x,y));
+            
+        } else if (newCell.possibleTiles.Count < 1) {
+            return false;
+        }
+        return true;
+
     }
     
     // Update is called once per frame
@@ -388,13 +417,14 @@ public class WFC : MonoBehaviour
             resetGrid();
             genRunning = true;
         }
-        if (isInfinite) {
+        if (isInfinite && blockGenRadius <= 0) {
             Vector2Int currentCellCoord = new Vector2Int(
                 Mathf.FloorToInt(player.position.x / cellWidth),
                 Mathf.FloorToInt(player.position.z / cellWidth)
             );
-            if (currentCellCoord != playerCellCoord) {
+            if (resetPlayerCoords || currentCellCoord != playerCellCoord) {
                 playerCellCoord = currentCellCoord;
+                resetPlayerCoords = false;
                 if (updateGridBoundary()) {
                     genRunning = true;
                 }
@@ -402,7 +432,9 @@ public class WFC : MonoBehaviour
         }
         if (genRunning) {
         // if (genRunning && (++delayCounter % 60 == 0)) {
-            if (Input.GetKey(KeyCode.F)) {
+            if (!Input.GetKey(KeyCode.F)) {
+                // TODO might need to make always in non-delayed mode for block-adding to work
+            // if (Input.GetKey(KeyCode.F)) {
                 while (genRunning) {
                     if (!runStep()) {
                         if (retryGen) {
@@ -413,6 +445,8 @@ public class WFC : MonoBehaviour
                             break;
                             // genRunning = true;
                         } else {
+                            Debug.Log("Spawned tile count: " + spawnedTiles.Count);
+                            // Debug.Log("Made tile count: " + madeTiles);
                             Debug.Log("done");
                             genRunning = false;
                         }
@@ -436,31 +470,171 @@ public class WFC : MonoBehaviour
                 }
             }
         }
-
-    }
-
-    bool updateGridBoundary() {
-        bool anyAdded = false;
-        for (int x = -playerGenRadius; x <= playerGenRadius; ++x) {
-            for (int y = -playerGenRadius; y <= playerGenRadius; ++y) {
-                int x2 = playerCellCoord.x + x;
-                int y2 = playerCellCoord.y + y;
-                if (!grid.ContainsKey((x2,y2))) {
-                    addCell(x2,y2);
-                    propagate(x2,y2,true);
-                    anyAdded = true;
-                    // TODO can I reduce amount of propagate happening?
+        if (isInfinite && blockGenRadius > 0) {
+            Vector2Int currentCellCoord = new Vector2Int(
+                Mathf.FloorToInt(player.position.x / cellWidth),
+                Mathf.FloorToInt(player.position.z / cellWidth)
+            );
+            if (resetPlayerCoords || currentCellCoord != playerCellCoord) {
+                playerCellCoord = currentCellCoord;
+                resetPlayerCoords = false;
+                if (updateGridBoundary()) {
+                    genRunning = true;
                 }
             }
         }
 
-        // TODO this functions as-is but not ideal w/ amount of restarting whole grid that happens.
-        // I think will try instead:
-        // expand a whole block at a time (e.g. 5x5)
-        // generate that whole block
-        // if generating fails, wipe just that block and retry (rather than wiping whole map)
-        // note then probably need to make whole thing happen in one frame rather than one step at a time
-        return anyAdded;
+    }
+
+    bool updateGridBoundary() {
+        if (blockGenRadius <= 0) {
+            bool anyAdded = false;
+            for (int x = -playerGenRadius; x <= playerGenRadius; ++x) {
+                for (int y = -playerGenRadius; y <= playerGenRadius; ++y) {
+                    int x2 = playerCellCoord.x + x;
+                    int y2 = playerCellCoord.y + y;
+                    if (!grid.ContainsKey((x2,y2))) {
+                        if (!addCell(x2,y2)) {
+                            retryGen = false;
+                            resetGrid();
+                            genRunning = true;
+                            Debug.Log("Impossible to expand, resetting grid");
+                            return true;
+                        }
+                        propagate(x2,y2,true);
+                        anyAdded = true;
+                        // TODO can I reduce amount of propagate happening?
+                    }
+                }
+            }
+
+            // TODO this functions as-is but not ideal w/ amount of restarting whole grid that happens.
+            // I think will try instead:
+            // expand a whole block at a time (e.g. 5x5)
+            // generate that whole block
+            // if generating fails, wipe just that block and retry (rather than wiping whole map)
+            // note then probably need to make whole thing happen in one frame rather than one step at a time
+            return anyAdded;
+        } else {
+
+            // blockGenRadius: size of groups of cells to generate at a time
+            // playerGenRadius: # of those groups in each direction to generate
+            Vector2Int blockCoord = (playerCellCoord / blockGenRadius) * blockGenRadius;
+            for (int blockX = -playerGenRadius; blockX <= playerGenRadius; ++blockX) {
+                for (int blockY = -playerGenRadius; blockY <= playerGenRadius; ++blockY) {
+                    int targetBlockCoordX = blockCoord.x + blockX * blockGenRadius;
+                    int targetBlockCoordY = blockCoord.y + blockY * blockGenRadius;
+                    // bool successfulBlockAdd = false;
+                    // bool anyAdded = false;
+                    if (!addedBlockCoords.ContainsKey((targetBlockCoordX,targetBlockCoordY))) {
+                        // anyAdded = true;
+                        retryGen = false;
+
+                        for (int x = 0; x < blockGenRadius; ++x) {
+                            for (int y = 0; y < blockGenRadius; ++y) {
+                                int x2 = targetBlockCoordX + x;
+                                int y2 = targetBlockCoordY + y;
+
+                                addedBlockCoords.Add((x2,y2), true);
+                                if (!grid.ContainsKey((x2,y2))) {
+                                    if (!addCell(x2,y2)) {
+                                        retryGen = false;
+                                        resetGrid();
+                                        genRunning = true;
+                                        Debug.Log("Impossible to expand, resetting grid");
+                                        return true;
+                                    }
+                                    propagate(x2,y2,true);
+                                    if (retryGen) {
+                                        retryGen = false;
+                                        resetGrid();
+                                        genRunning = true;
+                                        Debug.Log("Impossible to propagate expansion, resetting grid at " + x2 + " " + y2);
+                                        return true;
+                                    }
+                                    // Debug.Log(x2 + " " + y2);
+                                }
+                                // anyAdded = true;
+                                // TODO can I reduce amount of propagate happening?
+                                
+                            }
+                        }
+                        void fillCol(int y) {
+                            for (int x = 0; x < blockGenRadius; ++x) {
+                                int x2 = targetBlockCoordX + x;
+                                int y2 = targetBlockCoordY + y;
+                                if (!grid.ContainsKey((x2,y2))) {
+                                    addCell(x2,y2);
+                                    propagate(x2,y2,true);
+                                }
+                            }
+                        }
+                        fillCol(-1);
+                        fillCol(blockGenRadius);
+                            
+                        void fillRow(int x) {
+                            for (int y = 0; y < blockGenRadius; ++y) {
+                                int x2 = targetBlockCoordX + x;
+                                int y2 = targetBlockCoordY + y;
+                                if (!grid.ContainsKey((x2,y2))) {
+                                    addCell(x2,y2);
+                                    propagate(x2,y2,true);
+                                }
+                            }
+                        }
+                        
+                            
+                        fillRow(-1);
+                        fillRow(blockGenRadius);
+                    
+                        int objStartIndex = spawnedTiles.Count - 1;
+                        int blockTries = 0;
+                        bool blockGenRunning = true;
+                        
+                        while (blockGenRunning) {
+                            retryGen = false;
+                            if (!runStep()) {
+                                if (retryGen) {
+                                    // failsafe; whether impossible configurations can appear depends on input I believe. only had failures in the case I was testing due to a mistake in neighbor list, but for other tilesets may be legitimately possible I believe
+                                    // reset section
+                                    if (++blockTries >= maxBlockTries) {
+                                        retryGen = false;
+                                        resetGrid();
+                                        genRunning = true;
+                                        Debug.Log("Max tries exceeded, resetting grid");
+                                        // TODO? really should just reset an increased region rather than whole thing but need to restructure spawnedTiles to do so (needs to be a dictionary rather than a list)
+                                        return true;
+                                    }
+                                    Debug.Log("Cells at " + targetBlockCoordX + ", " + targetBlockCoordY + " try #" + blockTries);
+                                    for (int i = spawnedTiles.Count - 1; i > objStartIndex; --i) {
+                                        Destroy(spawnedTiles[i].gameObject);
+                                        spawnedTiles.RemoveAt(i);
+                                    }
+                                    for (int x = 0; x < blockGenRadius; ++x) {
+                                        for (int y = 0; y < blockGenRadius; ++y) {
+                                            int x2 = targetBlockCoordX + x;
+                                            int y2 = targetBlockCoordY + y;
+                                            grid.Remove((x2,y2));
+                                            addCell(x2,y2);
+                                            // TODO probably better way to do this--store propagated form in advance? though copying from that might be more work if on average don't need to reset
+                                            propagate(x2,y2,true);
+                                        }
+                                    }
+                                    retryGen = false;
+                                    
+                                    // genRunning = true;
+                                } else {
+                                    // Debug.Log("DONE Cells at " + targetBlockCoordX + ", " + targetBlockCoordY);
+                                    blockGenRunning = false;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        // Debug.Log(blockCoord);
+        return false;
+        }
     }
 
     bool runStep() {
@@ -471,12 +645,27 @@ public class WFC : MonoBehaviour
         Vector2Int targetCoords = new Vector2Int(0,0);
         // TODO this is the super-naive version of entropy check; can improve
         // also might eventually need to add e.g. backtracking
-        foreach(KeyValuePair<(int,int), Cell> pair in grid) {
-            int len = pair.Value.possibleTiles.Count;
-            if (leastCount > len && len > 1) {
-                leastCount = len;
-                targetCell = pair.Value;
-                targetCoords = new Vector2Int(pair.Key.Item1, pair.Key.Item2);
+        if (isInfinite && blockGenRadius > 0) {
+            foreach(KeyValuePair<(int,int), Cell> pair in grid) {
+                int len = pair.Value.possibleTiles.Count;
+                if (!addedBlockCoords.ContainsKey(pair.Key)) {
+                    // skip boundary cells until full block started
+                    continue;
+                }
+                if (leastCount > len && len > 1) {
+                    leastCount = len;
+                    targetCell = pair.Value;
+                    targetCoords = new Vector2Int(pair.Key.Item1, pair.Key.Item2);
+                }
+            }
+        } else {
+            foreach(KeyValuePair<(int,int), Cell> pair in grid) {
+                int len = pair.Value.possibleTiles.Count;
+                if (leastCount > len && len > 1) {
+                    leastCount = len;
+                    targetCell = pair.Value;
+                    targetCoords = new Vector2Int(pair.Key.Item1, pair.Key.Item2);
+                }
             }
         }
         if (leastCount != int.MaxValue) {
@@ -604,7 +793,7 @@ public class WFC : MonoBehaviour
             }
 
             if (curCell.possibleTiles.Count < 1) {
-                Debug.Log("Failed, no possible tiles at " + x + ", " + y);
+                // Debug.Log("Failed, no possible tiles at " + x + ", " + y);
                 retryGen = true;
                 return;
             }
@@ -632,7 +821,7 @@ public class WFC : MonoBehaviour
     }
 
     void makeTile(Tile chosenTile, Vector2Int targetCoords) {
-        
+        // ++madeTiles;
         Vector3 targetPos = new Vector3(targetCoords.x * cellWidth,0,targetCoords.y * cellWidth);
         Tile newTile = Instantiate(chosenTile, targetPos, chosenTile.rotation);
         newTile.transform.parent = this.transform;
