@@ -160,7 +160,7 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _DeepColor: {r: 0.109855205, g: 0.15843555, b: 0.21698111, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _FoamColor: {r: 0.5849056, g: 0.5849056, b: 0.5849056, a: 0}
+    - _FoamColor: {r: 0.5849056, g: 0.5849056, b: 0.5849056, a: 1}
     - _FoamScale: {r: 150, g: 3000, b: 0, a: 0}
     - _RefractionScale: {r: 2, g: 2, b: 0, a: 0}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
