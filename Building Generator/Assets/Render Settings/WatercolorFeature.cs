@@ -7,28 +7,19 @@ public class WatercolorFeature : ScriptableRendererFeature
     class WatercolorPass : ScriptableRenderPass
     {
         public Material material;
-
-        private RenderTargetIdentifier cameraColorTarget;
         private RenderTargetHandle tempTexture;
 
         public WatercolorPass(Material mat)
         {
             material = mat;
             tempTexture.Init("_TempWatercolorRT");
-            renderPassEvent = RenderPassEvent.AfterRenderingTransparents;
+            renderPassEvent = RenderPassEvent.AfterRenderingPostProcessing;
         }
 
         public override void OnCameraSetup(CommandBuffer cmd, ref RenderingData renderingData)
         {
-            // Correct way to get camera color target
-#if UNITY_2022_2_OR_NEWER
-            cameraColorTarget = renderingData.cameraData.renderer.cameraColorTargetHandle;
-#else
-            cameraColorTarget = renderingData.cameraData.renderer.cameraColorTarget;
-#endif
-
-            // Allocate temp RT with same descriptor as camera
             var desc = renderingData.cameraData.cameraTargetDescriptor;
+            desc.depthBufferBits = 0;
             cmd.GetTemporaryRT(tempTexture.id, desc);
         }
 
@@ -39,12 +30,16 @@ public class WatercolorFeature : ScriptableRendererFeature
 
             CommandBuffer cmd = CommandBufferPool.Get("WatercolorPass");
 
-            // Blit camera → temp
-            Blit(cmd, cameraColorTarget, tempTexture.Identifier(), material, 0);
+            var source = renderingData.cameraData.renderer.cameraColorTarget;
 
-            // Blit temp → camera
-            Blit(cmd, tempTexture.Identifier(), cameraColorTarget);
+            // Set the texture explicitly for the shader
+            cmd.SetGlobalTexture("_MainTex", source);
 
+            cmd.SetGlobalTexture("_DepthTex", renderingData.cameraData.renderer.cameraDepthTarget);
+
+            // Blit with the material
+            cmd.Blit(source, tempTexture.Identifier(), material, 0);
+            cmd.Blit(tempTexture.Identifier(), source);
 
             context.ExecuteCommandBuffer(cmd);
             CommandBufferPool.Release(cmd);
@@ -54,7 +49,7 @@ public class WatercolorFeature : ScriptableRendererFeature
         {
             cmd.ReleaseTemporaryRT(tempTexture.id);
         }
-    }
+    } // WatercolorPass class ends here
 
     [System.Serializable]
     public class Settings
