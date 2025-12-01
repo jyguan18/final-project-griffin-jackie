@@ -17189,7 +17189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 169a995978e92410d835cf28a3d6c4d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mapDimensions: {x: 40, y: 40}
+  mapDimensions: {x: 0, y: 0}
   cellWidth: 5
   cellBottom: -2.5
   cellBottomEpsilon: 0.001
@@ -17261,8 +17261,8 @@ MonoBehaviour:
   - {fileID: 1719157493}
   isInfinite: 1
   player: {fileID: 2037400732}
-  playerGenRadius: 5
-  blockGenRadius: 0
+  playerGenRadius: 4
+  blockGenRadius: 5
   maxBlockTries: 20
 --- !u!4 &1898571035 stripped
 Transform:
