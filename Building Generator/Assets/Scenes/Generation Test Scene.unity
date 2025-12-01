@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.5
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.5613505, g: 0.5758335, b: 0.583983, a: 0.5}
+  m_IndirectSpecularColor: {r: 0.61640686, g: 0.61890996, b: 0.6272513, a: 0.5}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -189,6 +189,7 @@ MonoBehaviour:
   allowedHeightBounds:
   - {x: 7.5, y: 100000}
   maxHeightDifference: 3
+  placeAtWaterHeight: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!4 &4394574 stripped
 Transform:
@@ -315,6 +316,7 @@ MonoBehaviour:
   allowedHeightBounds:
   - {x: 8.5, y: 100000}
   maxHeightDifference: 4
+  placeAtWaterHeight: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!1 &35748989 stripped
 GameObject:
@@ -409,6 +411,7 @@ MonoBehaviour:
   allowedHeightBounds:
   - {x: 7.5, y: 100000}
   maxHeightDifference: 3
+  placeAtWaterHeight: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!1 &52391222
 GameObject:
@@ -476,6 +479,7 @@ MonoBehaviour:
   allowedHeightBounds:
   - {x: 7.5, y: 100000}
   maxHeightDifference: 3
+  placeAtWaterHeight: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!1 &63491940
 GameObject:
@@ -649,6 +653,7 @@ MonoBehaviour:
   allowedHeightBounds:
   - {x: 7.5, y: 100000}
   maxHeightDifference: 3
+  placeAtWaterHeight: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!1 &66600748
 GameObject:
@@ -932,6 +937,7 @@ MonoBehaviour:
   allowedHeightBounds:
   - {x: 7.5, y: 100000}
   maxHeightDifference: 3
+  placeAtWaterHeight: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!1 &76328825
 GameObject:
@@ -999,6 +1005,7 @@ MonoBehaviour:
   allowedHeightBounds:
   - {x: 7.5, y: 100000}
   maxHeightDifference: 3
+  placeAtWaterHeight: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!4 &77962293 stripped
 Transform:
@@ -1207,6 +1214,7 @@ MonoBehaviour:
   allowedHeightBounds:
   - {x: 7.5, y: 100000}
   maxHeightDifference: 3
+  placeAtWaterHeight: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!4 &89438266
 Transform:
@@ -1397,6 +1405,7 @@ MonoBehaviour:
   allowedHeightBounds:
   - {x: 7.5, y: 100000}
   maxHeightDifference: 3
+  placeAtWaterHeight: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!1 &127189441 stripped
 GameObject:
@@ -1524,6 +1533,7 @@ MonoBehaviour:
   playerGenRadius: 0
   blockGenRadius: 0
   maxBlockTries: 20
+  waterHeight: 8
 --- !u!1 &178337785 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -3957782524123411102, guid: da9a036e0d267486cb626cd5b16c1f64, type: 3}
@@ -1790,6 +1800,7 @@ MonoBehaviour:
   allowedHeightBounds:
   - {x: 7.5, y: 100000}
   maxHeightDifference: 3
+  placeAtWaterHeight: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!1001 &214463082
 PrefabInstance:
@@ -2198,6 +2209,7 @@ MonoBehaviour:
   allowedHeightBounds:
   - {x: 7.5, y: 100000}
   maxHeightDifference: 3
+  placeAtWaterHeight: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!4 &269484662
 Transform:
@@ -2576,6 +2588,7 @@ MonoBehaviour:
   allowedHeightBounds:
   - {x: 7.5, y: 100000}
   maxHeightDifference: 3
+  placeAtWaterHeight: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!1001 &288542018
 PrefabInstance:
@@ -2826,6 +2839,7 @@ MonoBehaviour:
   playerGenRadius: 0
   blockGenRadius: 0
   maxBlockTries: 20
+  waterHeight: 8
 --- !u!4 &308993707
 Transform:
   m_ObjectHideFlags: 0
@@ -2907,6 +2921,7 @@ MonoBehaviour:
   allowedHeightBounds:
   - {x: 8.5, y: 100000}
   maxHeightDifference: 4
+  placeAtWaterHeight: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!1 &311197694
 GameObject:
@@ -2974,6 +2989,7 @@ MonoBehaviour:
   allowedHeightBounds:
   - {x: 8.5, y: 100000}
   maxHeightDifference: 4
+  placeAtWaterHeight: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!1001 &316751507
 PrefabInstance:
@@ -3122,6 +3138,7 @@ MonoBehaviour:
   allowedHeightBounds:
   - {x: 7.5, y: 100000}
   maxHeightDifference: 3
+  placeAtWaterHeight: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!1001 &332543738
 PrefabInstance:
@@ -3798,6 +3815,7 @@ MonoBehaviour:
   allowedHeightBounds:
   - {x: 7.5, y: 100000}
   maxHeightDifference: 3
+  placeAtWaterHeight: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!4 &397979163
 Transform:
@@ -4240,6 +4258,9 @@ Transform:
   - {fileID: 746736490}
   - {fileID: 1132849088}
   - {fileID: 754931947}
+  - {fileID: 2101482727}
+  - {fileID: 1162547791}
+  - {fileID: 1049145170}
   m_Father: {fileID: 1169956841}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &425376680 stripped
@@ -4313,6 +4334,7 @@ MonoBehaviour:
   allowedHeightBounds:
   - {x: 7.5, y: 100000}
   maxHeightDifference: 3
+  placeAtWaterHeight: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!1001 &453175701
 PrefabInstance:
@@ -4547,6 +4569,7 @@ MonoBehaviour:
   allowedHeightBounds:
   - {x: 7.5, y: 100000}
   maxHeightDifference: 3
+  placeAtWaterHeight: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!4 &473860348 stripped
 Transform:
@@ -5239,6 +5262,7 @@ MonoBehaviour:
   allowedHeightBounds:
   - {x: 8.5, y: 100000}
   maxHeightDifference: 4
+  placeAtWaterHeight: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!1 &547676542
 GameObject:
@@ -5290,6 +5314,7 @@ MonoBehaviour:
   allowedHeightBounds:
   - {x: 7.5, y: 100000}
   maxHeightDifference: 3
+  placeAtWaterHeight: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!4 &547676544
 Transform:
@@ -5373,6 +5398,7 @@ MonoBehaviour:
   allowedHeightBounds:
   - {x: 7.5, y: 100000}
   maxHeightDifference: 3
+  placeAtWaterHeight: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!1001 &559443285
 PrefabInstance:
@@ -5618,6 +5644,7 @@ MonoBehaviour:
   playerGenRadius: 0
   blockGenRadius: 0
   maxBlockTries: 20
+  waterHeight: 8
 --- !u!1001 &579310151
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5981,6 +6008,7 @@ MonoBehaviour:
   allowedHeightBounds:
   - {x: 7.5, y: 100000}
   maxHeightDifference: 3
+  placeAtWaterHeight: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!4 &601444151 stripped
 Transform:
@@ -6067,6 +6095,7 @@ MonoBehaviour:
   playerGenRadius: 0
   blockGenRadius: 0
   maxBlockTries: 20
+  waterHeight: 8
 --- !u!1 &635897084 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -3957782524123411102, guid: f2c2e2e89cb7941a9b77024ef300241f, type: 3}
@@ -6160,6 +6189,7 @@ MonoBehaviour:
   allowedHeightBounds:
   - {x: 7.5, y: 100000}
   maxHeightDifference: 3
+  placeAtWaterHeight: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!1001 &658378767
 PrefabInstance:
@@ -6270,6 +6300,63 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2ab6da1347a154cdbb7d56a8e43edec4, type: 3}
   m_PrefabInstance: {fileID: 122375484}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &679359924
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2101482727}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 0109f55fe6ab4d94c931fd3c2596f440, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0109f55fe6ab4d94c931fd3c2596f440, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.6375
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0109f55fe6ab4d94c931fd3c2596f440, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0109f55fe6ab4d94c931fd3c2596f440, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071067
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0109f55fe6ab4d94c931fd3c2596f440, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0109f55fe6ab4d94c931fd3c2596f440, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0109f55fe6ab4d94c931fd3c2596f440, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0109f55fe6ab4d94c931fd3c2596f440, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0109f55fe6ab4d94c931fd3c2596f440, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0109f55fe6ab4d94c931fd3c2596f440, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0109f55fe6ab4d94c931fd3c2596f440, type: 3}
+      propertyPath: m_Name
+      value: Boat
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0109f55fe6ab4d94c931fd3c2596f440, type: 3}
 --- !u!1 &683269861 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -3957782524123411102, guid: da9a036e0d267486cb626cd5b16c1f64, type: 3}
@@ -6631,6 +6718,7 @@ MonoBehaviour:
   playerGenRadius: 0
   blockGenRadius: 0
   maxBlockTries: 20
+  waterHeight: 8
 --- !u!1 &705198788 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -344004081357383697, guid: 832e316375d94468583b2f0939ddbb4c, type: 3}
@@ -6941,6 +7029,7 @@ MonoBehaviour:
   playerGenRadius: 0
   blockGenRadius: 0
   maxBlockTries: 20
+  waterHeight: 8
 --- !u!1 &716786086 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -7609145667655734672, guid: da9a036e0d267486cb626cd5b16c1f64, type: 3}
@@ -7034,6 +7123,7 @@ MonoBehaviour:
   allowedHeightBounds:
   - {x: 7.5, y: 100000}
   maxHeightDifference: 3
+  placeAtWaterHeight: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!1 &732563321 stripped
 GameObject:
@@ -7628,6 +7718,7 @@ MonoBehaviour:
   playerGenRadius: 0
   blockGenRadius: 0
   maxBlockTries: 20
+  waterHeight: 8
 --- !u!1001 &798173802
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7959,6 +8050,7 @@ MonoBehaviour:
   allowedHeightBounds:
   - {x: 7.5, y: 100000}
   maxHeightDifference: 3
+  placeAtWaterHeight: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!1 &807999578 stripped
 GameObject:
@@ -8539,6 +8631,7 @@ MonoBehaviour:
   allowedHeightBounds:
   - {x: 7.5, y: 100000}
   maxHeightDifference: 3
+  placeAtWaterHeight: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!4 &901430615 stripped
 Transform:
@@ -8549,6 +8642,11 @@ Transform:
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: e4f7764bfece84c2289454fb88ec39dc, type: 3}
   m_PrefabInstance: {fileID: 1359655983}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &915496229 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0109f55fe6ab4d94c931fd3c2596f440, type: 3}
+  m_PrefabInstance: {fileID: 679359924}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &916025651
 PrefabInstance:
@@ -9130,10 +9228,73 @@ MonoBehaviour:
   playerGenRadius: 0
   blockGenRadius: 0
   maxBlockTries: 20
+  waterHeight: 8
 --- !u!4 &965381738 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 5d157e24e03384413862a95ac73ce2a8, type: 3}
   m_PrefabInstance: {fileID: 1702489038}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &967488102
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1162547791}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 0109f55fe6ab4d94c931fd3c2596f440, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0109f55fe6ab4d94c931fd3c2596f440, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.6375
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0109f55fe6ab4d94c931fd3c2596f440, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0109f55fe6ab4d94c931fd3c2596f440, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.65339553
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0109f55fe6ab4d94c931fd3c2596f440, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.6531675
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0109f55fe6ab4d94c931fd3c2596f440, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.2706453
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0109f55fe6ab4d94c931fd3c2596f440, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.27055082
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0109f55fe6ab4d94c931fd3c2596f440, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -89.98
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0109f55fe6ab4d94c931fd3c2596f440, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0109f55fe6ab4d94c931fd3c2596f440, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0109f55fe6ab4d94c931fd3c2596f440, type: 3}
+      propertyPath: m_Name
+      value: Boat
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0109f55fe6ab4d94c931fd3c2596f440, type: 3}
+--- !u!4 &967488103 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0109f55fe6ab4d94c931fd3c2596f440, type: 3}
+  m_PrefabInstance: {fileID: 967488102}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &981279599 stripped
 GameObject:
@@ -9596,6 +9757,7 @@ MonoBehaviour:
   allowedHeightBounds:
   - {x: 7.5, y: 100000}
   maxHeightDifference: 3
+  placeAtWaterHeight: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!4 &1034900788
 Transform:
@@ -9679,6 +9841,7 @@ MonoBehaviour:
   allowedHeightBounds:
   - {x: 7.5, y: 100000}
   maxHeightDifference: 3
+  placeAtWaterHeight: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!1001 &1045117848
 PrefabInstance:
@@ -9851,6 +10014,89 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f2c2e2e89cb7941a9b77024ef300241f, type: 3}
   m_PrefabInstance: {fileID: 1047556595}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1049145168
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1049145170}
+  - component: {fileID: 1049145169}
+  m_Layer: 0
+  m_Name: Empty Water
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1049145169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1049145168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c9bde83f0d1b4c98ae6edb1de450c59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  neighborsXPos: []
+  neighborsXNeg: []
+  neighborsZPos: []
+  neighborsZNeg: []
+  applyHeightAboveBase: 0
+  addRot90: 1
+  addRot180: 1
+  addRot270: 1
+  autoFlags:
+  - Empty
+  neighborsXPAutoFlags:
+  - Empty
+  - Wall
+  - House
+  - House Blue
+  - Eaved Tower
+  neighborsXNAutoFlags:
+  - Empty
+  - Wall
+  - House
+  - House Blue
+  - Eaved Tower
+  neighborsZPAutoFlags:
+  - Empty
+  - Wall
+  - House
+  - House Blue
+  - Eaved Tower
+  neighborsZNAutoFlags:
+  - Empty
+  - Wall
+  - House
+  - House Blue
+  - Eaved Tower
+  allowedHeightBounds:
+  - {x: 0, y: 8}
+  maxHeightDifference: -1
+  placeAtWaterHeight: 1
+  rotation: {x: 0, y: 0, z: 0, w: 1}
+--- !u!4 &1049145170
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1049145168}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 425181100}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1061541737
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10583,6 +10829,7 @@ MonoBehaviour:
   allowedHeightBounds:
   - {x: 7.5, y: 100000}
   maxHeightDifference: 3
+  placeAtWaterHeight: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!1001 &1150999774
 PrefabInstance:
@@ -10685,6 +10932,90 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 5302568919011541938, guid: 9059d48c2441546ae9c775ca70d78649, type: 3}
+--- !u!1 &1162547789
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1162547791}
+  - component: {fileID: 1162547790}
+  m_Layer: 0
+  m_Name: Boat Rotated 45
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1162547790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1162547789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c9bde83f0d1b4c98ae6edb1de450c59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  neighborsXPos: []
+  neighborsXNeg: []
+  neighborsZPos: []
+  neighborsZNeg: []
+  applyHeightAboveBase: 0
+  addRot90: 1
+  addRot180: 1
+  addRot270: 1
+  autoFlags:
+  - Empty
+  neighborsXPAutoFlags:
+  - Empty
+  - Wall
+  - House
+  - House Blue
+  - Eaved Tower
+  neighborsXNAutoFlags:
+  - Empty
+  - Wall
+  - House
+  - House Blue
+  - Eaved Tower
+  neighborsZPAutoFlags:
+  - Empty
+  - Wall
+  - House
+  - House Blue
+  - Eaved Tower
+  neighborsZNAutoFlags:
+  - Empty
+  - Wall
+  - House
+  - House Blue
+  - Eaved Tower
+  allowedHeightBounds:
+  - {x: 0, y: 8}
+  maxHeightDifference: -1
+  placeAtWaterHeight: 1
+  rotation: {x: 0, y: 0, z: 0, w: 1}
+--- !u!4 &1162547791
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1162547789}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 967488103}
+  m_Father: {fileID: 425181100}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1169956840
 GameObject:
   m_ObjectHideFlags: 0
@@ -10796,6 +11127,7 @@ MonoBehaviour:
   playerGenRadius: 0
   blockGenRadius: 0
   maxBlockTries: 20
+  waterHeight: 8
 --- !u!1 &1212654637
 GameObject:
   m_ObjectHideFlags: 0
@@ -10862,6 +11194,7 @@ MonoBehaviour:
   allowedHeightBounds:
   - {x: 7.5, y: 100000}
   maxHeightDifference: 3
+  placeAtWaterHeight: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!1001 &1217090839
 PrefabInstance:
@@ -11206,6 +11539,7 @@ MonoBehaviour:
   allowedHeightBounds:
   - {x: 7.5, y: 100000}
   maxHeightDifference: 3
+  placeAtWaterHeight: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!4 &1261676239 stripped
 Transform:
@@ -11655,6 +11989,7 @@ MonoBehaviour:
   allowedHeightBounds:
   - {x: 7.5, y: 100000}
   maxHeightDifference: 3
+  placeAtWaterHeight: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!4 &1289493858 stripped
 Transform:
@@ -11839,6 +12174,7 @@ MonoBehaviour:
   allowedHeightBounds:
   - {x: 8.5, y: 100000}
   maxHeightDifference: 4
+  placeAtWaterHeight: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!4 &1357559748 stripped
 Transform:
@@ -11895,6 +12231,7 @@ MonoBehaviour:
   allowedHeightBounds:
   - {x: 7.5, y: 100000}
   maxHeightDifference: 3
+  placeAtWaterHeight: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!4 &1358528283
 Transform:
@@ -12056,6 +12393,7 @@ MonoBehaviour:
   allowedHeightBounds:
   - {x: 7.5, y: 100000}
   maxHeightDifference: 3
+  placeAtWaterHeight: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!1 &1366881832 stripped
 GameObject:
@@ -12722,6 +13060,7 @@ MonoBehaviour:
   allowedHeightBounds:
   - {x: 7.5, y: 100000}
   maxHeightDifference: 3
+  placeAtWaterHeight: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!1 &1424477943
 GameObject:
@@ -12789,6 +13128,7 @@ MonoBehaviour:
   allowedHeightBounds:
   - {x: 7.5, y: 100000}
   maxHeightDifference: 3
+  placeAtWaterHeight: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!1001 &1429232122
 PrefabInstance:
@@ -12965,6 +13305,7 @@ MonoBehaviour:
   playerGenRadius: 0
   blockGenRadius: 0
   maxBlockTries: 20
+  waterHeight: 8
 --- !u!1001 &1473757248
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13093,6 +13434,7 @@ MonoBehaviour:
   playerGenRadius: 0
   blockGenRadius: 0
   maxBlockTries: 20
+  waterHeight: 8
 --- !u!4 &1476623669
 Transform:
   m_ObjectHideFlags: 0
@@ -13383,6 +13725,7 @@ MonoBehaviour:
   allowedHeightBounds:
   - {x: 8.5, y: 100000}
   maxHeightDifference: 4
+  placeAtWaterHeight: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!1 &1527838362
 GameObject:
@@ -13597,6 +13940,7 @@ MonoBehaviour:
   allowedHeightBounds:
   - {x: 7.5, y: 100000}
   maxHeightDifference: 3
+  placeAtWaterHeight: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!4 &1573458719
 Transform:
@@ -14596,6 +14940,7 @@ MonoBehaviour:
   allowedHeightBounds:
   - {x: 7.5, y: 100000}
   maxHeightDifference: 3
+  placeAtWaterHeight: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!4 &1616852891
 Transform:
@@ -14736,6 +15081,7 @@ MonoBehaviour:
   allowedHeightBounds:
   - {x: 7.5, y: 100000}
   maxHeightDifference: 3
+  placeAtWaterHeight: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!4 &1619728664
 Transform:
@@ -14942,6 +15288,7 @@ MonoBehaviour:
   allowedHeightBounds:
   - {x: 7.5, y: 100000}
   maxHeightDifference: 3
+  placeAtWaterHeight: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!1 &1644827410
 GameObject:
@@ -15009,6 +15356,7 @@ MonoBehaviour:
   allowedHeightBounds:
   - {x: 8.5, y: 100000}
   maxHeightDifference: 4
+  placeAtWaterHeight: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!1 &1646513647 stripped
 GameObject:
@@ -15104,6 +15452,7 @@ MonoBehaviour:
   playerGenRadius: 0
   blockGenRadius: 0
   maxBlockTries: 20
+  waterHeight: 8
 --- !u!1 &1657856389 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3779745573541866595, guid: bd48ba56c7af04a0899658c2e1b0c78d, type: 3}
@@ -15388,6 +15737,7 @@ MonoBehaviour:
   allowedHeightBounds:
   - {x: 7.5, y: 100000}
   maxHeightDifference: 3
+  placeAtWaterHeight: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!1 &1692754977
 GameObject:
@@ -15455,6 +15805,7 @@ MonoBehaviour:
   allowedHeightBounds:
   - {x: 7.5, y: 100000}
   maxHeightDifference: 3
+  placeAtWaterHeight: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!1 &1697346698 stripped
 GameObject:
@@ -15549,6 +15900,7 @@ MonoBehaviour:
   allowedHeightBounds:
   - {x: 7.5, y: 100000}
   maxHeightDifference: 3
+  placeAtWaterHeight: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!1 &1702414056
 GameObject:
@@ -15626,6 +15978,7 @@ MonoBehaviour:
   playerGenRadius: 0
   blockGenRadius: 0
   maxBlockTries: 20
+  waterHeight: 8
 --- !u!1001 &1702489038
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15989,6 +16342,7 @@ MonoBehaviour:
   allowedHeightBounds:
   - {x: 8.5, y: 100000}
   maxHeightDifference: 4
+  placeAtWaterHeight: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!1 &1755751383 stripped
 GameObject:
@@ -16083,6 +16437,7 @@ MonoBehaviour:
   allowedHeightBounds:
   - {x: 7.5, y: 100000}
   maxHeightDifference: 3
+  placeAtWaterHeight: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!1001 &1760137731
 PrefabInstance:
@@ -16379,6 +16734,7 @@ MonoBehaviour:
   allowedHeightBounds:
   - {x: 7.5, y: 100000}
   maxHeightDifference: 3
+  placeAtWaterHeight: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!1 &1769937861
 GameObject:
@@ -16446,6 +16802,7 @@ MonoBehaviour:
   allowedHeightBounds:
   - {x: 7.5, y: 100000}
   maxHeightDifference: 3
+  placeAtWaterHeight: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!1 &1771641732 stripped
 GameObject:
@@ -16688,6 +17045,7 @@ MonoBehaviour:
   playerGenRadius: 0
   blockGenRadius: 0
   maxBlockTries: 20
+  waterHeight: 8
 --- !u!1 &1825366572
 GameObject:
   m_ObjectHideFlags: 0
@@ -16777,6 +17135,7 @@ MonoBehaviour:
   playerGenRadius: 0
   blockGenRadius: 0
   maxBlockTries: 20
+  waterHeight: 8
 --- !u!4 &1836371802 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 5d157e24e03384413862a95ac73ce2a8, type: 3}
@@ -17128,6 +17487,7 @@ MonoBehaviour:
   allowedHeightBounds:
   - {x: 7.5, y: 100000}
   maxHeightDifference: 3
+  placeAtWaterHeight: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!4 &1884063816
 Transform:
@@ -17259,11 +17619,19 @@ MonoBehaviour:
   - {fileID: 311197696}
   - {fileID: 20651075}
   - {fileID: 1719157493}
+  - {fileID: 2101482728}
+  - {fileID: 1162547790}
+  - {fileID: 1049145169}
+  - {fileID: 1049145169}
+  - {fileID: 1049145169}
+  - {fileID: 1049145169}
+  - {fileID: 1049145169}
   isInfinite: 1
   player: {fileID: 2037400732}
   playerGenRadius: 4
   blockGenRadius: 5
   maxBlockTries: 20
+  waterHeight: 8
 --- !u!4 &1898571035 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f2c2e2e89cb7941a9b77024ef300241f, type: 3}
@@ -17335,6 +17703,7 @@ MonoBehaviour:
   allowedHeightBounds:
   - {x: 7.5, y: 100000}
   maxHeightDifference: 3
+  placeAtWaterHeight: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!4 &1923553970 stripped
 Transform:
@@ -18126,6 +18495,7 @@ MonoBehaviour:
   allowedHeightBounds:
   - {x: 7.5, y: 100000}
   maxHeightDifference: 3
+  placeAtWaterHeight: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!1 &1943925276 stripped
 GameObject:
@@ -18500,6 +18870,7 @@ MonoBehaviour:
   playerGenRadius: 0
   blockGenRadius: 0
   maxBlockTries: 20
+  waterHeight: 8
 --- !u!1 &1968856920 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -344004081357383697, guid: 8e4d379d1270e40e8a89a7ee33a68580, type: 3}
@@ -18811,6 +19182,7 @@ MonoBehaviour:
   allowedHeightBounds:
   - {x: 7.5, y: 100000}
   maxHeightDifference: 3
+  placeAtWaterHeight: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!4 &2009881305 stripped
 Transform:
@@ -19391,6 +19763,90 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 832e316375d94468583b2f0939ddbb4c, type: 3}
+--- !u!1 &2101482726
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2101482727}
+  - component: {fileID: 2101482728}
+  m_Layer: 0
+  m_Name: Boat
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2101482727
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2101482726}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 915496229}
+  m_Father: {fileID: 425181100}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2101482728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2101482726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c9bde83f0d1b4c98ae6edb1de450c59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  neighborsXPos: []
+  neighborsXNeg: []
+  neighborsZPos: []
+  neighborsZNeg: []
+  applyHeightAboveBase: 0
+  addRot90: 1
+  addRot180: 1
+  addRot270: 1
+  autoFlags:
+  - Empty
+  neighborsXPAutoFlags:
+  - Empty
+  - Wall
+  - House
+  - House Blue
+  - Eaved Tower
+  neighborsXNAutoFlags:
+  - Empty
+  - Wall
+  - House
+  - House Blue
+  - Eaved Tower
+  neighborsZPAutoFlags:
+  - Empty
+  - Wall
+  - House
+  - House Blue
+  - Eaved Tower
+  neighborsZNAutoFlags:
+  - Empty
+  - Wall
+  - House
+  - House Blue
+  - Eaved Tower
+  allowedHeightBounds:
+  - {x: 0, y: 8}
+  maxHeightDifference: -1
+  placeAtWaterHeight: 1
+  rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!1001 &2112274730
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20091,6 +20547,7 @@ MonoBehaviour:
   allowedHeightBounds:
   - {x: 7.5, y: 100000}
   maxHeightDifference: 3
+  placeAtWaterHeight: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!1 &2144712016
 GameObject:
@@ -20158,6 +20615,7 @@ MonoBehaviour:
   allowedHeightBounds:
   - {x: 7.5, y: 100000}
   maxHeightDifference: 3
+  placeAtWaterHeight: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!1 &2145026523 stripped
 GameObject:
