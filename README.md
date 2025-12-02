@@ -12,6 +12,9 @@ Downloadable demo executables available at https://github.com/jyguan18/final-pro
 
 ## Final Output
 Below are images demonstrating the final, stylized and explorable environment.
+<img width="1641" height="802" alt="Screenshot 2025-12-01 235912" src="https://github.com/user-attachments/assets/e2fe950f-43c7-442f-be5d-1501540eb620" />
+<img width="2559" height="1599" alt="Screenshot 2025-12-01 235406" src="https://github.com/user-attachments/assets/4867449a-f0ca-45e7-a775-90d7dd3d1e8e" />
+<img width="1642" height="804" alt="Screenshot 2025-12-01 235242" src="https://github.com/user-attachments/assets/0510e167-9324-44ea-99fe-be01985b5852" />
 
 ## Post-Mortem
 Overall, the project was a success and we accomplished everything that we were initially set out to accomplish. This was largely due to our evaluation of the project's scope in advance—in our initial concept, we considered a form of user-editable WFC, in the vein of how Townscaper uses user input to determine which tiles to fill with buildings vsersus blank spaces, but we decided that a less-interactive experience would be more manageable in scope (not requiring a GUI to be integrated into it and having less unpredictable elements), while we could still capture some user-interaction by allowing the user to explore the generated world in first person. 
