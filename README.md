@@ -2,6 +2,8 @@
 
 https://github.com/user-attachments/assets/f12309df-7907-4f5f-b200-3cf60652c8f7
 
+Downloadable demo executables available at https://github.com/jyguan18/final-project-griffin-jackie/releases/tag/Demos
+
 ## Key Features
 - [X] Integrated, Infinite Generation: The Wave Function Collapse algorithm, used to place city structures (castles and houses), directly interacts with the height data from the Perlin noise-based terrain. Tiles are selected based on constraints for specific height ranges and slopes, which makes them appear logically in the landscape.
 - [X] Adaptive Geometry: The WFC-generated models adapt their vertices to the underlying terrain height. This allows structures like castle walls to hug the landscape while still retaining the integrity of vertical structures like towers by selectively applying height adaptation.
