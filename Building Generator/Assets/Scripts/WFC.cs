@@ -261,6 +261,9 @@ public class WFC : MonoBehaviour
         }
 
         // TODO should set all of the template objects non-active and the new ones active I guess
+        foreach (Tile tile in initializedTileTypes) {
+            tile.gameObject.SetActive(false);
+        }
     }
 
     void resetGrid() {
@@ -881,6 +884,7 @@ public class WFC : MonoBehaviour
                 meshCollider.sharedMesh = m;
             }
         }
+        newTile.gameObject.SetActive(true);
         spawnedTiles.Add(newTile);
         
     }

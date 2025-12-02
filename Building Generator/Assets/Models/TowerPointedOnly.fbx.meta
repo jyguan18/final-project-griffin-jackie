@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b72ff5a061990463fa4a0902a55d41de
+guid: ca04ec54dd66b4a68b053268ce35b28f
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,23 +7,13 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: pCylinder2Mat
-    second: {fileID: 2100000, guid: ddb5b180b56484836a332c808a2604c5, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: pasted__pCylinder2Mat
-    second: {fileID: 2100000, guid: ddb5b180b56484836a332c808a2604c5, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: polySurface1Mat
-    second: {fileID: 2100000, guid: ddb5b180b56484836a332c808a2604c5, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: polySurface2Mat
+      name: PointedRoof
     second: {fileID: 2100000, guid: 1097e68a8da354b08897be0d5c02998e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert1
+    second: {fileID: 2100000, guid: ddb5b180b56484836a332c808a2604c5, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -55,7 +45,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 100
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1

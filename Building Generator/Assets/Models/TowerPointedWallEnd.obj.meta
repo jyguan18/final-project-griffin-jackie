@@ -14,6 +14,16 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: pasted__pCylinder2Mat
     second: {fileID: 2100000, guid: ddb5b180b56484836a332c808a2604c5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: polySurface1Mat
+    second: {fileID: 2100000, guid: ddb5b180b56484836a332c808a2604c5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: polySurface2Mat
+    second: {fileID: 2100000, guid: 1097e68a8da354b08897be0d5c02998e, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
