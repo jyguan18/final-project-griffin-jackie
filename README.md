@@ -1,3 +1,30 @@
+# Final Project
+
+
+## Key Features
+- [X] Integrated, Infinite Generation: The WFC algorithm, used to place city structures (castles and houses), directly interacts with the height data from the Perlin noise-based terrain. Tiles are selected based on constraints for specific height ranges and slopes, which makes them appear logically in the landscape.
+- [X] Adaptive Geometry: The WFC-generated models adapt their vertices to the underlying terrain height. This allows structures like castle walls to hug the landscape while still retaining the integrity of vertical structures like towers by selectively applying height adaptation.
+- [X] Aesthetic Stylization: A custom post-process shader was implemented to achieve the distinctive watercolor aesthetic, utilizing techiques like color quantization, edge darkening, and a paper-like overlay.
+- [X] Exploration: The scene is fully traversible with a first-person player view, allowing users to explore the infinite, chunk-loaded terrain and the procedurally placed architecture.
+
+## Final Output
+Below are images demonstrating the final, stylized and explorable environment.
+
+## Post-Mortem
+Overall, the project was a success and we accomplished everything that we were initially set out to accomplish.
+
+#### Goal Achievement
+- [X] Height-based terrain with height-based gradient
+- [X] Wave Function Collapse to populate the terrain with buildings
+- [X] First-Person Exploration
+- [X] Stylization Post-Process with a Water Shader  
+
+#### Pivots and Challenges
+
+For the post-process effect, I decided to move to the Universal Render Pipeline (URP), similar to our homework. The initial setup took a while to do to include it into our current scene and I had to remake a few shaders (to become shadergraphs) to work for URP. In addition, the move to the URP conflicted with the water shader implementation, which prevented the water from rendering correctly with transparency. We initially tried to set the water material to opaque, which showed up but caused some (very obvious) visual artifacts. We ended up implementinga custom URP pass that captured the scene, including the transparent water elements, and passed the result as a scene texture to the post-process volume. This ensured the transparent components were correctly sampled and processed by the subsequent post-process effects, resolving the conflict.
+
+Developing the watercolor post-process shader was an iterative and challenging process. I had to think more creatively about how I wanted to do it, since I wasn't strictly following a tutorial. The solution ended up involving breaking the shader logic into modular subgraphs. This allowed me to test each subgraph to make sure it worked, easier to tweak parameters, in order to achieve the desired style.
+
 # Milestone 1
 
 ## Wave Function Collapse
