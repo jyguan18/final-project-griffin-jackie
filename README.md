@@ -1,5 +1,6 @@
 # Final Project
 
+https://github.com/user-attachments/assets/f12309df-7907-4f5f-b200-3cf60652c8f7
 
 ## Key Features
 - [X] Integrated, Infinite Generation: The WFC algorithm, used to place city structures (castles and houses), directly interacts with the height data from the Perlin noise-based terrain. Tiles are selected based on constraints for specific height ranges and slopes, which makes them appear logically in the landscape.
