@@ -3,7 +3,7 @@
 https://github.com/user-attachments/assets/f12309df-7907-4f5f-b200-3cf60652c8f7
 
 ## Key Features
-- [X] Integrated, Infinite Generation: The WFC algorithm, used to place city structures (castles and houses), directly interacts with the height data from the Perlin noise-based terrain. Tiles are selected based on constraints for specific height ranges and slopes, which makes them appear logically in the landscape.
+- [X] Integrated, Infinite Generation: The Wave Function Collapse algorithm, used to place city structures (castles and houses), directly interacts with the height data from the Perlin noise-based terrain. Tiles are selected based on constraints for specific height ranges and slopes, which makes them appear logically in the landscape.
 - [X] Adaptive Geometry: The WFC-generated models adapt their vertices to the underlying terrain height. This allows structures like castle walls to hug the landscape while still retaining the integrity of vertical structures like towers by selectively applying height adaptation.
 - [X] Aesthetic Stylization: A custom post-process shader was implemented to achieve the distinctive watercolor aesthetic, utilizing techiques like color quantization, edge darkening, and a paper-like overlay.
 - [X] Exploration: The scene is fully traversible with a first-person player view, allowing users to explore the infinite, chunk-loaded terrain and the procedurally placed architecture.
@@ -12,7 +12,7 @@ https://github.com/user-attachments/assets/f12309df-7907-4f5f-b200-3cf60652c8f7
 Below are images demonstrating the final, stylized and explorable environment.
 
 ## Post-Mortem
-Overall, the project was a success and we accomplished everything that we were initially set out to accomplish.
+Overall, the project was a success and we accomplished everything that we were initially set out to accomplish. This was largely due to our evaluation of the project's scope in advance—in our initial concept, we considered a form of user-editable WFC, in the vein of how Townscaper uses user input to determine which tiles to fill with buildings vsersus blank spaces, but we decided that a less-interactive experience would be more manageable in scope (not requiring a GUI to be integrated into it and having less unpredictable elements), while we could still capture some user-interaction by allowing the user to explore the generated world in first person. 
 
 #### Goal Achievement
 - [X] Height-based terrain with height-based gradient
