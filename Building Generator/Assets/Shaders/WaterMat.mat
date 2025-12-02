@@ -122,12 +122,12 @@ Material:
     - _Cutoff: 0.5
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
-    - _Distance: 10
+    - _Distance: 6
     - _DstBlend: 0
     - _DstBlendAlpha: 0
     - _EnvironmentReflections: 1
-    - _FoamAmount: 0.1
-    - _FoamCutoff: 10
+    - _FoamAmount: 1
+    - _FoamCutoff: 1
     - _FoamSpeed: 2
     - _GlossMapScale: 0
     - _Glossiness: 0
@@ -161,7 +161,7 @@ Material:
     - _DeepColor: {r: 0.109855205, g: 0.15843555, b: 0.21698111, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _FoamColor: {r: 0.5849056, g: 0.5849056, b: 0.5849056, a: 1}
-    - _FoamScale: {r: 150, g: 3000, b: 0, a: 0}
+    - _FoamScale: {r: 300, g: 300, b: 0, a: 0}
     - _RefractionScale: {r: 2, g: 2, b: 0, a: 0}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
     - _SurfaceColor: {r: 0.25750563, g: 0.42675328, b: 0.5283019, a: 1}
