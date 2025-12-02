@@ -187,7 +187,7 @@ MonoBehaviour:
   neighborsZNAutoFlags:
   - Empty
   allowedHeightBounds:
-  - {x: 7.5, y: 100000}
+  - {x: 7.85, y: 100000}
   maxHeightDifference: 3
   placeAtWaterHeight: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
@@ -409,7 +409,7 @@ MonoBehaviour:
   neighborsZNAutoFlags:
   - Empty
   allowedHeightBounds:
-  - {x: 7.5, y: 100000}
+  - {x: 7.85, y: 100000}
   maxHeightDifference: 3
   placeAtWaterHeight: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
@@ -477,7 +477,7 @@ MonoBehaviour:
   neighborsZNAutoFlags:
   - Empty
   allowedHeightBounds:
-  - {x: 7.5, y: 100000}
+  - {x: 7.85, y: 100000}
   maxHeightDifference: 3
   placeAtWaterHeight: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
@@ -582,8 +582,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 45, y: 8, z: 45}
-  m_LocalScale: {x: 15, y: 15, z: 15}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 30, y: 30, z: 30}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -651,7 +651,7 @@ MonoBehaviour:
   neighborsZNAutoFlags:
   - Empty
   allowedHeightBounds:
-  - {x: 7.5, y: 100000}
+  - {x: 7.85, y: 100000}
   maxHeightDifference: 3
   placeAtWaterHeight: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
@@ -935,7 +935,7 @@ MonoBehaviour:
   neighborsZNAutoFlags:
   - House Blue
   allowedHeightBounds:
-  - {x: 7.5, y: 100000}
+  - {x: 7.85, y: 100000}
   maxHeightDifference: 3
   placeAtWaterHeight: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
@@ -1003,7 +1003,7 @@ MonoBehaviour:
   neighborsZNAutoFlags:
   - House Blue
   allowedHeightBounds:
-  - {x: 7.5, y: 100000}
+  - {x: 7.85, y: 100000}
   maxHeightDifference: 3
   placeAtWaterHeight: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
@@ -1212,7 +1212,7 @@ MonoBehaviour:
   neighborsZNAutoFlags:
   - Empty
   allowedHeightBounds:
-  - {x: 7.5, y: 100000}
+  - {x: 7.85, y: 100000}
   maxHeightDifference: 3
   placeAtWaterHeight: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
@@ -1403,7 +1403,7 @@ MonoBehaviour:
   neighborsZNAutoFlags:
   - Empty
   allowedHeightBounds:
-  - {x: 7.5, y: 100000}
+  - {x: 7.85, y: 100000}
   maxHeightDifference: 3
   placeAtWaterHeight: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
@@ -1798,7 +1798,7 @@ MonoBehaviour:
   neighborsZNAutoFlags:
   - House Blue
   allowedHeightBounds:
-  - {x: 7.5, y: 100000}
+  - {x: 7.85, y: 100000}
   maxHeightDifference: 3
   placeAtWaterHeight: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
@@ -2207,7 +2207,7 @@ MonoBehaviour:
   neighborsZNAutoFlags:
   - House
   allowedHeightBounds:
-  - {x: 7.5, y: 100000}
+  - {x: 7.85, y: 100000}
   maxHeightDifference: 3
   placeAtWaterHeight: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
@@ -2586,7 +2586,7 @@ MonoBehaviour:
   neighborsZNAutoFlags:
   - Empty
   allowedHeightBounds:
-  - {x: 7.5, y: 100000}
+  - {x: 7.85, y: 100000}
   maxHeightDifference: 3
   placeAtWaterHeight: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
@@ -3136,7 +3136,7 @@ MonoBehaviour:
   neighborsZNAutoFlags:
   - Empty
   allowedHeightBounds:
-  - {x: 7.5, y: 100000}
+  - {x: 7.85, y: 100000}
   maxHeightDifference: 3
   placeAtWaterHeight: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
@@ -3813,7 +3813,7 @@ MonoBehaviour:
   neighborsZNAutoFlags:
   - Empty
   allowedHeightBounds:
-  - {x: 7.5, y: 100000}
+  - {x: 7.85, y: 100000}
   maxHeightDifference: 3
   placeAtWaterHeight: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
@@ -4332,7 +4332,7 @@ MonoBehaviour:
   neighborsZNAutoFlags:
   - House
   allowedHeightBounds:
-  - {x: 7.5, y: 100000}
+  - {x: 7.85, y: 100000}
   maxHeightDifference: 3
   placeAtWaterHeight: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
@@ -4567,7 +4567,7 @@ MonoBehaviour:
   neighborsZNAutoFlags:
   - Empty
   allowedHeightBounds:
-  - {x: 7.5, y: 100000}
+  - {x: 7.85, y: 100000}
   maxHeightDifference: 3
   placeAtWaterHeight: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
@@ -5312,7 +5312,7 @@ MonoBehaviour:
   neighborsZNAutoFlags:
   - House
   allowedHeightBounds:
-  - {x: 7.5, y: 100000}
+  - {x: 7.85, y: 100000}
   maxHeightDifference: 3
   placeAtWaterHeight: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
@@ -5396,7 +5396,7 @@ MonoBehaviour:
   neighborsZNAutoFlags:
   - House Blue
   allowedHeightBounds:
-  - {x: 7.5, y: 100000}
+  - {x: 7.85, y: 100000}
   maxHeightDifference: 3
   placeAtWaterHeight: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
@@ -5910,7 +5910,7 @@ MonoBehaviour:
   neighborsZNAutoFlags:
   - House
   allowedHeightBounds:
-  - {x: 7.5, y: 100000}
+  - {x: 7.85, y: 100000}
   maxHeightDifference: 3
   placeAtWaterHeight: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
@@ -6091,7 +6091,7 @@ MonoBehaviour:
   neighborsZNAutoFlags:
   - House Blue
   allowedHeightBounds:
-  - {x: 7.5, y: 100000}
+  - {x: 7.85, y: 100000}
   maxHeightDifference: 3
   placeAtWaterHeight: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
@@ -7025,7 +7025,7 @@ MonoBehaviour:
   neighborsZNAutoFlags:
   - Empty
   allowedHeightBounds:
-  - {x: 7.5, y: 100000}
+  - {x: 7.85, y: 100000}
   maxHeightDifference: 3
   placeAtWaterHeight: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
@@ -7952,7 +7952,7 @@ MonoBehaviour:
   neighborsZNAutoFlags:
   - House
   allowedHeightBounds:
-  - {x: 7.5, y: 100000}
+  - {x: 7.85, y: 100000}
   maxHeightDifference: 3
   placeAtWaterHeight: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
@@ -8533,7 +8533,7 @@ MonoBehaviour:
   neighborsZNAutoFlags:
   - Empty
   allowedHeightBounds:
-  - {x: 7.5, y: 100000}
+  - {x: 7.85, y: 100000}
   maxHeightDifference: 3
   placeAtWaterHeight: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
@@ -9766,7 +9766,7 @@ MonoBehaviour:
   neighborsZNAutoFlags:
   - House
   allowedHeightBounds:
-  - {x: 7.5, y: 100000}
+  - {x: 7.85, y: 100000}
   maxHeightDifference: 3
   placeAtWaterHeight: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
@@ -9850,7 +9850,7 @@ MonoBehaviour:
   neighborsZNAutoFlags:
   - House Blue
   allowedHeightBounds:
-  - {x: 7.5, y: 100000}
+  - {x: 7.85, y: 100000}
   maxHeightDifference: 3
   placeAtWaterHeight: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
@@ -11010,7 +11010,7 @@ MonoBehaviour:
   neighborsZNAutoFlags:
   - House Blue
   allowedHeightBounds:
-  - {x: 7.5, y: 100000}
+  - {x: 7.85, y: 100000}
   maxHeightDifference: 3
   placeAtWaterHeight: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
@@ -11375,7 +11375,7 @@ MonoBehaviour:
   neighborsZNAutoFlags:
   - Empty
   allowedHeightBounds:
-  - {x: 7.5, y: 100000}
+  - {x: 7.85, y: 100000}
   maxHeightDifference: 3
   placeAtWaterHeight: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
@@ -11720,7 +11720,7 @@ MonoBehaviour:
   neighborsZNAutoFlags:
   - Empty
   allowedHeightBounds:
-  - {x: 7.5, y: 100000}
+  - {x: 7.85, y: 100000}
   maxHeightDifference: 3
   placeAtWaterHeight: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
@@ -12170,7 +12170,7 @@ MonoBehaviour:
   neighborsZNAutoFlags:
   - House Blue
   allowedHeightBounds:
-  - {x: 7.5, y: 100000}
+  - {x: 7.85, y: 100000}
   maxHeightDifference: 3
   placeAtWaterHeight: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
@@ -12327,7 +12327,7 @@ MonoBehaviour:
   neighborsZNAutoFlags:
   - House
   allowedHeightBounds:
-  - {x: 7.5, y: 100000}
+  - {x: 7.85, y: 100000}
   maxHeightDifference: 3
   placeAtWaterHeight: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
@@ -12489,7 +12489,7 @@ MonoBehaviour:
   neighborsZNAutoFlags:
   - House
   allowedHeightBounds:
-  - {x: 7.5, y: 100000}
+  - {x: 7.85, y: 100000}
   maxHeightDifference: 3
   placeAtWaterHeight: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
@@ -13156,7 +13156,7 @@ MonoBehaviour:
   neighborsZNAutoFlags:
   - Empty
   allowedHeightBounds:
-  - {x: 7.5, y: 100000}
+  - {x: 7.85, y: 100000}
   maxHeightDifference: 3
   placeAtWaterHeight: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
@@ -13224,7 +13224,7 @@ MonoBehaviour:
   neighborsZNAutoFlags:
   - House Blue
   allowedHeightBounds:
-  - {x: 7.5, y: 100000}
+  - {x: 7.85, y: 100000}
   maxHeightDifference: 3
   placeAtWaterHeight: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
@@ -13891,7 +13891,7 @@ MonoBehaviour:
   globalMinHeight: 0
   globalMaxHeight: 25
   chunkSize: 10
-  viewDistance: 10
+  viewDistance: 20
   noiseScale: 0.03
   heightMultiplier: 25
 --- !u!4 &1527838364
@@ -14036,7 +14036,7 @@ MonoBehaviour:
   neighborsZNAutoFlags:
   - House
   allowedHeightBounds:
-  - {x: 7.5, y: 100000}
+  - {x: 7.85, y: 100000}
   maxHeightDifference: 3
   placeAtWaterHeight: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
@@ -15036,7 +15036,7 @@ MonoBehaviour:
   neighborsZNAutoFlags:
   - Empty
   allowedHeightBounds:
-  - {x: 7.5, y: 100000}
+  - {x: 7.85, y: 100000}
   maxHeightDifference: 3
   placeAtWaterHeight: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
@@ -15177,7 +15177,7 @@ MonoBehaviour:
   neighborsZNAutoFlags:
   - House
   allowedHeightBounds:
-  - {x: 7.5, y: 100000}
+  - {x: 7.85, y: 100000}
   maxHeightDifference: 3
   placeAtWaterHeight: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
@@ -15384,7 +15384,7 @@ MonoBehaviour:
   neighborsZNAutoFlags:
   - House
   allowedHeightBounds:
-  - {x: 7.5, y: 100000}
+  - {x: 7.85, y: 100000}
   maxHeightDifference: 3
   placeAtWaterHeight: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
@@ -15833,7 +15833,7 @@ MonoBehaviour:
   neighborsZNAutoFlags:
   - House Blue
   allowedHeightBounds:
-  - {x: 7.5, y: 100000}
+  - {x: 7.85, y: 100000}
   maxHeightDifference: 3
   placeAtWaterHeight: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
@@ -15901,7 +15901,7 @@ MonoBehaviour:
   neighborsZNAutoFlags:
   - Empty
   allowedHeightBounds:
-  - {x: 7.5, y: 100000}
+  - {x: 7.85, y: 100000}
   maxHeightDifference: 3
   placeAtWaterHeight: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
@@ -15996,7 +15996,7 @@ MonoBehaviour:
   neighborsZNAutoFlags:
   - House
   allowedHeightBounds:
-  - {x: 7.5, y: 100000}
+  - {x: 7.85, y: 100000}
   maxHeightDifference: 3
   placeAtWaterHeight: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
@@ -16533,7 +16533,7 @@ MonoBehaviour:
   neighborsZNAutoFlags:
   - House
   allowedHeightBounds:
-  - {x: 7.5, y: 100000}
+  - {x: 7.85, y: 100000}
   maxHeightDifference: 3
   placeAtWaterHeight: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
@@ -16830,7 +16830,7 @@ MonoBehaviour:
   neighborsZNAutoFlags:
   - House Blue
   allowedHeightBounds:
-  - {x: 7.5, y: 100000}
+  - {x: 7.85, y: 100000}
   maxHeightDifference: 3
   placeAtWaterHeight: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
@@ -16898,7 +16898,7 @@ MonoBehaviour:
   neighborsZNAutoFlags:
   - House Blue
   allowedHeightBounds:
-  - {x: 7.5, y: 100000}
+  - {x: 7.85, y: 100000}
   maxHeightDifference: 3
   placeAtWaterHeight: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
@@ -17556,7 +17556,7 @@ MonoBehaviour:
   neighborsZNAutoFlags:
   - Empty
   allowedHeightBounds:
-  - {x: 7.5, y: 100000}
+  - {x: 7.85, y: 100000}
   maxHeightDifference: 3
   placeAtWaterHeight: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
@@ -17699,7 +17699,7 @@ MonoBehaviour:
   - {fileID: 1049145169}
   isInfinite: 1
   player: {fileID: 2037400732}
-  playerGenRadius: 4
+  playerGenRadius: 6
   blockGenRadius: 5
   maxBlockTries: 20
   waterHeight: 8
@@ -17772,7 +17772,7 @@ MonoBehaviour:
   neighborsZNAutoFlags:
   - Empty
   allowedHeightBounds:
-  - {x: 7.5, y: 100000}
+  - {x: 7.85, y: 100000}
   maxHeightDifference: 3
   placeAtWaterHeight: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
@@ -18564,7 +18564,7 @@ MonoBehaviour:
   neighborsZNAutoFlags:
   - Empty
   allowedHeightBounds:
-  - {x: 7.5, y: 100000}
+  - {x: 7.85, y: 100000}
   maxHeightDifference: 3
   placeAtWaterHeight: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
@@ -19251,7 +19251,7 @@ MonoBehaviour:
   neighborsZNAutoFlags:
   - House
   allowedHeightBounds:
-  - {x: 7.5, y: 100000}
+  - {x: 7.85, y: 100000}
   maxHeightDifference: 3
   placeAtWaterHeight: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
@@ -20616,7 +20616,7 @@ MonoBehaviour:
   neighborsZNAutoFlags:
   - House Blue
   allowedHeightBounds:
-  - {x: 7.5, y: 100000}
+  - {x: 7.85, y: 100000}
   maxHeightDifference: 3
   placeAtWaterHeight: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
@@ -20684,7 +20684,7 @@ MonoBehaviour:
   neighborsZNAutoFlags:
   - House Blue
   allowedHeightBounds:
-  - {x: 7.5, y: 100000}
+  - {x: 7.85, y: 100000}
   maxHeightDifference: 3
   placeAtWaterHeight: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
